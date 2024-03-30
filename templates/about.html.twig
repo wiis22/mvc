@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+    <h1>Om Kursen MVC</h1>
+    <div class="holder">
+        <div class="left_column">
+            <p>Denna kurs skall vi lära oss programmera webbapplikationer på ett objektorienterat sätt med fokus på det arkitekturella designmönstret MVC.</p>
+        </div>
+
+        <div class="rigth_column">
+            <img src="{{ asset('img/coffee.jpg') }}" alt="representativ bild av kursen">
+            <a href="https://github.com/dbwebb-se/mvc/">GitHub till Kursen MVC</a>
+            <a href="https://github.com/wiis22/mvc">Mitt GitHub</a>
+        </div>
+    </div>
+{% endblock %}

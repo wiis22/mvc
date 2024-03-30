@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="{{ asset('img/northenLigthsIcon.png') }}">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        <header class="site-header" style="background-image: url({{ asset('img/background.jpg') }})">
+            <span class="site-title">My Symfony Site for MVC</span>
+        </header>
+
+        <nav>
+            <ul>
+                <a href="{{ path('home') }}">Home</a>
+                <a href="{{ path('about') }}">About</a>
+                <a href="{{ path('report') }}">Report</a>
+                <a href="{{ path('lucky_number') }}">Lucky number</a>
+            </ul>
+        </nav>
+
+        <main>
+            {% block body %}{% endblock %}
+        </main>
+
+        <footer>
+            <span>Copyright (c) 2024 Wiktor Isaksson</span>
+        </footer>
+    </body>
+</html>
