@@ -14,10 +14,10 @@ use App\Card\DeckOfCards;
 class CardGameController extends AbstractController
 {
     #[Route("/game/card", name: "card_start")]
-    public function home( SessionInterface $session ): Response
+    public function home(SessionInterface $session): Response
     {
 
-        if (!($session->get("deck"))){
+        if (!($session->get("deck"))) {
             $deck = new DeckOfCards();
             $session->set("deck", $deck);
         }
@@ -25,17 +25,17 @@ class CardGameController extends AbstractController
     }
 
     #[Route("/game/deck", name: "show_deck")]
-    public function showDeck( SessionInterface $session ): Response
+    public function showDeck(SessionInterface $session): Response
     {
         $deck = $session->get("deck");
         $cardsInDeck = $deck->getCardsAsString();
 
-        return $this->render('card/deck.html.twig',["cardsInDeck" => $cardsInDeck]);
+        return $this->render('card/deck.html.twig', ["cardsInDeck" => $cardsInDeck]);
     }
 
 
     #[Route("/game/deck/shuffle", name: "deck_shuffle")]
-    public function shuffleDeck( SessionInterface $session ): Response
+    public function shuffleDeck(SessionInterface $session): Response
     {
 
         $deck = new DeckOfCards();
@@ -43,16 +43,16 @@ class CardGameController extends AbstractController
         $session->set("deck", $deck);
         $cardsInDeckShuffled = $deck->getCardsAsString();
 
-        return $this->render('card/shuffle.html.twig',["cardsInDeckShuffled" => $cardsInDeckShuffled]);
+        return $this->render('card/shuffle.html.twig', ["cardsInDeckShuffled" => $cardsInDeckShuffled]);
     }
 
     #[Route("/game/deck/draw", name: "deck_draw")]
-    public function drawCard( SessionInterface $session ): Response
+    public function drawCard(SessionInterface $session): Response
     {
         $deck = $session->get("deck", new DeckOfCards());
 
         $drawnCard = $deck->dealCard();
-        if ($drawnCard == null){
+        if ($drawnCard == null) {
             $this->addFlash(
                 'warning',
                 'Finns inga mer kort att dra, shuffla leken!'
@@ -63,7 +63,7 @@ class CardGameController extends AbstractController
             $remainingCards = count($deck->getCardsAsString());
 
             $session->set("deck", $deck);
-            $returnPath = $this->render('card/draw.html.twig',[
+            $returnPath = $this->render('card/draw.html.twig', [
                     "drawnCard" => $drawnCard,
                     "remainingCards" => $remainingCards
                 ]);
@@ -72,12 +72,12 @@ class CardGameController extends AbstractController
     }
 
     #[Route("/game/deck/draw/{number}", name: "deck_draw_number")]
-    public function drawCardNumber( int $number,SessionInterface $session ): Response
+    public function drawCardNumber(int $number, SessionInterface $session): Response
     {
         $deck = $session->get("deck", new DeckOfCards());
 
         $remainingCards = count($deck->getCardsAsString());
-        if ($number > $remainingCards){
+        if ($number > $remainingCards) {
             $this->addFlash(
                 'warning',
                 'Finns inga tillräkligt med kort att dra, shuffla leken eller testa en midre nummer!'
@@ -87,8 +87,7 @@ class CardGameController extends AbstractController
 
             $drawnCards = [];
 
-            for ($i=0; $i < $number; $i++)
-            {
+            for ($i = 0; $i < $number; $i++) {
                 $drawnCard = $deck->dealCard();
                 $drawnCards[] = $drawnCard->getAsString();
             }
@@ -97,7 +96,7 @@ class CardGameController extends AbstractController
 
             $session->set("deck", $deck);
 
-            $returnPath = $this->render('card/draw_number.html.twig',[
+            $returnPath = $this->render('card/draw_number.html.twig', [
                     "drawnCards" => $drawnCards,
                     "remainingCards" => $remainingCards
                 ]);

@@ -24,7 +24,7 @@ class ControllerJsonDeck
             $theDeck[$suit][$value] = $card->getAsString();
         }
 
-        $session->set("theDeck",  $deck);
+        $session->set("theDeck", $deck);
 
         $response = new JsonResponse($theDeck);
         $response->setEncodingOptions(
@@ -62,7 +62,7 @@ class ControllerJsonDeck
     {
         $deckData = $session->get("theDeck");
 
-        if ($deckData instanceof DeckOfCards){
+        if ($deckData instanceof DeckOfCards) {
             $deck = $deckData;
         } else {
             $deck = new DeckOfCards();
@@ -96,7 +96,7 @@ class ControllerJsonDeck
     {
         $deckData = $session->get("theDeck");
 
-        if ($deckData instanceof DeckOfCards){
+        if ($deckData instanceof DeckOfCards) {
             $deck = $deckData;
         } else {
             $deck = new DeckOfCards();

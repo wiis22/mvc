@@ -15,8 +15,7 @@ class CardHand
 
     public function deal(int $numberOfCards): void
     {
-        for ($i=0; $i < $numberOfCards; $i++) 
-        {
+        for ($i = 0; $i < $numberOfCards; $i++) {
             $this->cards[] = $this->deck->dealCard();
         }
     }

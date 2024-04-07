@@ -11,14 +11,13 @@ class DeckOfCards
         $this->InitDeck();
     }
 
-    public function initDeck(): void{
+    public function initDeck(): void
+    {
         $suits = ["♠", "♥", "♦", "♣"];
         $values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
 
-        foreach ($suits as $suit)
-        {
-            foreach ($values as $value)
-            {
+        foreach ($suits as $suit) {
+            foreach ($values as $value) {
                 $this->cards[] = new Card($value, $suit);
             }
         }
@@ -37,8 +36,7 @@ class DeckOfCards
     public function getCardsAsString(): array
     {
         $cardsAsString = [];
-        foreach ($this->cards as $card)
-        {
+        foreach ($this->cards as $card) {
             $cardsAsString[] = $card->getValue() . $card->getSuit();
         }
 
