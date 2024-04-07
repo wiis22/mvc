@@ -32,17 +32,6 @@ class ControllerTwig extends AbstractController
         return $this->redirectToRoute('report') . '#kmom01';
     }
 
-    // #[Route("/api", name: "api")]
-    // public function api(): Response
-    // {
-
-    //     $jsonRoutes = [
-    //         "api/quote" => "Kommer ge dig en quote"
-    //     ];
-
-    //     return $this->render('apier.html.twig', $jsonRoutes);
-    // }
-
     #[Route("/lucky", name: "lucky_number")]
     public function number(): Response
     {
