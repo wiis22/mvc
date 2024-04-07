@@ -15,6 +15,10 @@ class ControllerJson
 
         $data = [
             'api-quote' => "Kommer ge dig en quote",
+            'api-deck' => "Kommer ge dig en kortlek",
+            'api-deck-shuffle' => "Kommer att shuffla kortleken",
+            'api-deck-draw' => "drar 1 kort",
+            'api-deck-draw-:number' => "drar 1 eller :number antal kort",
         ];
 
         // return new JsonResponse($data);

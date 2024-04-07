@@ -44,4 +44,14 @@ class DeckOfCards
 
         return $cardsAsString;
     }
+
+    public function getCards(): array
+    {
+        return $this->cards;
+    }
+
+    public function setCards(array $cards): void
+    {
+        $this->cards = $cards;
+    }
 }
