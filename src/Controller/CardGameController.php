@@ -40,9 +40,36 @@ class CardGameController extends AbstractController
 
         $deck = new DeckOfCards();
         $deck->shuffle();
+        $session->set("deck", $deck);
         $cardsInDeckShuffled = $deck->getCardsAsString();
 
         return $this->render('card/shuffle.html.twig',["cardsInDeckShuffled" => $cardsInDeckShuffled]);
+    }
+
+    
+    #[Route("/game/deck/draw", name: "deck_draw")]
+    public function drawCard( SessionInterface $session ): Response
+    {
+        $deck = $session->get("deck", new DeckOfCards());
+
+        $drawnCard = $deck->dealCard();
+        if ($drawnCard == null){
+            $this->addFlash(
+                'warning',
+                'Finns inga mer kort att dra, shuffla leken eller tryck upp en ny!'
+            );
+            $returnPath = $this->render('card/home.html.twig');
+        } else {
+            $drawnCard = $drawnCard->getAsString();
+            $remainingCards = count($deck->getCardsAsString());
+
+            $session->set("deck", $deck);
+            $returnPath = $this->render('card/draw.html.twig',[
+                    "drawnCard" => $drawnCard,
+                    "remainingCards" => $remainingCards
+                ]);
+        }
+        return $returnPath;
     }
 
 
