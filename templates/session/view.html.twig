@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Session Contetnt{% endblock %}
+
+{% block body %}
+<h1>Session Contetnt</h1>
+<p> the session contains:  </p>
+<ul>
+    {% for key, value in sessionData %}
+        <p>{{ key }}: {{ value }} </p>
+    {% endfor %}
+</ul>
+
+<p> +-------------------------------------+ </p>
+
+{% endblock %}

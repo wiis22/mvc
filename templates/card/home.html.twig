@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card Game{% endblock %}
+
+{% block body %}
+<h1 class="pigh1">Card game</h1>
+
+<p>Detta är bass sidan för ett pobörjat kort spel.</p>
+
+{{ include('pig/flash.html.twig') }}
+
+<ul>
+    <a href="{{ path('show_deck') }}">Deck</a>
+    <a href="{{ path('session_view') }}">Session</a>
+    <a href="{{ path('session_delete') }}">Session Delete</a>
+</ul>
+
+<p>
+Jag anväder mig utav tre huvudklasser, Card, Cardhand och DeckOfCards.
+<p>
+<strong>Card</strong>: Representerar ett spelkort. Den innehåller attribut value och suit, samt metoder för att hämta och sätta värden.<br>
+<p>
+<strong>Cardhand</strong>: Representerar en hand av kort som spelaren kan ha. Den innehåller en samling av Card-objekt och metoder för att dela ut kort till handen från kortleken och hämta vilka kort som finns i den.<br>
+<p>
+<strong>DeckOfCards</strong>: Representerar en fransk-engelsk kortlek. Den innehåller en samling av Card-objekt och methoder för att skapa, blanda och dela ut kort från den.<br>
+
+<p> Relationnerna mellan dessa är att Cardhand innehåller antingen en eller flera Card-objekt från kortleken. 
+DeckOfCards innehåller 52 Card-objekt och kan antingen balnda eller dela ut.
+
+<img src="{{ asset('img/uml_card.png') }}" alt="uml diagram av klasserna till card" style="width: 50%; padding: 1rem; display: block; margin-left: auto; margin-right: auto;">
+
+{% endblock %}

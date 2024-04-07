@@ -55,6 +55,11 @@ main {
     border-radius: 1rem;
 }
 
+ul {
+    display: flex;
+    flex-direction: column;
+}
+
 h1 {
     border-bottom: 4px double #ccc;
 }
