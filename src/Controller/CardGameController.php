@@ -46,7 +46,6 @@ class CardGameController extends AbstractController
         return $this->render('card/shuffle.html.twig',["cardsInDeckShuffled" => $cardsInDeckShuffled]);
     }
 
-    
     #[Route("/game/deck/draw", name: "deck_draw")]
     public function drawCard( SessionInterface $session ): Response
     {
@@ -56,7 +55,7 @@ class CardGameController extends AbstractController
         if ($drawnCard == null){
             $this->addFlash(
                 'warning',
-                'Finns inga mer kort att dra, shuffla leken eller tryck upp en ny!'
+                'Finns inga mer kort att dra, shuffla leken!'
             );
             $returnPath = $this->render('card/home.html.twig');
         } else {
@@ -72,6 +71,39 @@ class CardGameController extends AbstractController
         return $returnPath;
     }
 
+    #[Route("/game/deck/draw/{number}", name: "deck_draw_number")]
+    public function drawCardNumber( int $number,SessionInterface $session ): Response
+    {
+        $deck = $session->get("deck", new DeckOfCards());
+
+        $remainingCards = count($deck->getCardsAsString());
+        if ($number > $remainingCards){
+            $this->addFlash(
+                'warning',
+                'Finns inga tillräkligt med kort att dra, shuffla leken eller testa en midre nummer!'
+            );
+            $returnPath = $this->render('card/home.html.twig');
+        } else {
+
+            $drawnCards = [];
+
+            for ($i=0; $i < $number; $i++)
+            {
+                $drawnCard = $deck->dealCard();
+                $drawnCards[] = $drawnCard->getAsString();
+            }
+
+            $remainingCards = count($deck->getCardsAsString());
+
+            $session->set("deck", $deck);
+
+            $returnPath = $this->render('card/draw_number.html.twig',[
+                    "drawnCards" => $drawnCards,
+                    "remainingCards" => $remainingCards
+                ]);
+        }
+        return $returnPath;
+    }
 
     #[Route("/session", name: "session_view")]
     public function viewSession(SessionInterface $session): Response
