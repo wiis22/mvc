@@ -5,6 +5,10 @@
 {% block body %}
 <h1>Deck</h1>
 
-
+<ul>
+    {% for card in cardsInDeck %}
+        <li class="card">{{ card }}</li>
+    {% endfor %}
+</ul>
 
 {% endblock %}

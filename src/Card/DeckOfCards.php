@@ -12,7 +12,7 @@ class DeckOfCards
     }
 
     public function initDeck(): void{
-        $suits = ["♠", "♥", "♦", "☘"];
+        $suits = ["♠", "♥", "♦", "♣"];
         $values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
 
         foreach ($suits as $suit)
@@ -32,5 +32,16 @@ class DeckOfCards
     public function dealCard(): ?Card
     {
         return array_pop($this->cards);
+    }
+
+    public function getCardsAsString(): array
+    {
+        $cardsAsString = [];
+        foreach ($this->cards as $card)
+        {
+            $cardsAsString[] = $card->getValue() . $card->getSuit();
+        }
+
+        return $cardsAsString;
     }
 }

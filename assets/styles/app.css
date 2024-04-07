@@ -35,7 +35,8 @@ header .site-title {
 }
 
 .navUl {
-    /* display: flex;
+    display: block;
+    /* flex-direction: row;
     justify-content: space-evenly; */
     text-align: center;
 }

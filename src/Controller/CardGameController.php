@@ -16,21 +16,21 @@ class CardGameController extends AbstractController
     #[Route("/game/card", name: "card_start")]
     public function home( SessionInterface $session ): Response
     {
-        $deck = new DeckOfCards();
 
-        $session->set("deck", $deck);
-
+        if (!($session->get("deck"))){
+            $deck = new DeckOfCards();
+            $session->set("deck", $deck);
+        }
         return $this->render('card/home.html.twig');
     }
 
     #[Route("/game/deck", name: "show_deck")]
     public function showDeck( SessionInterface $session ): Response
     {
-        $data = [
-            "cardsInDeck" => $session->get("deck")
-        ];
+        $deck = $session->get("deck");
+        $cardsInDeck = $deck->getCardsAsString();
 
-        return $this->render('card/deck.html.twig', $data);
+        return $this->render('card/deck.html.twig',["cardsInDeck" => $cardsInDeck]);
     }
 
 
@@ -38,8 +38,11 @@ class CardGameController extends AbstractController
     #[Route("/session", name: "session_view")]
     public function viewSession(SessionInterface $session): Response
     {
+        $sessionData = $session->all();
+        $sessionKeys = array_keys($sessionData);
+        // var_dump($sessionData);
         return $this->render('session/view.html.twig', [
-            'sessionData' => $session->all(),
+            'sessionKeys' => $sessionKeys,
         ]);
     }
 
@@ -51,6 +54,6 @@ class CardGameController extends AbstractController
             'warning',
             'nu är sessionen raderad!'
         );
-        return $this->redirectToRoute('card_start');
+        return $this->redirectToRoute('session_view');
     }
 }
