@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card Game{% endblock %}
+
+{% block body %}
+<h1>Card Drawn</h1>
+
+<p> The card that was drawn was: {{ drawnCard }} and the number of cards left in the deck is: {{ remainingCards }}</P>
+
+
+<a href="{{ path('deck_draw') }}">Draw a card from Deck</a>
+{% endblock %}
