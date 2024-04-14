@@ -4,10 +4,10 @@ namespace App\Card;
 
 class Card
 {
-    protected $value;
-    protected $suit;
+    protected ?string $value;
+    protected ?string $suit;
 
-    public function __construct($value = null, $suit = null)
+    public function __construct(?string $value = null, ?string $suit = null)
     {
         $this->value = $value;
         $this->suit = $suit;
@@ -23,12 +23,12 @@ class Card
         return $this->suit;
     }
 
-    public function setValue($value): void
+    public function setValue(?string $value): void
     {
         $this->value = $value;
     }
 
-    public function setSuit($suit): void
+    public function setSuit(?string $suit): void
     {
         $this->suit = $suit;
     }

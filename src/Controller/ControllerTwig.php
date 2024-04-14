@@ -29,7 +29,9 @@ class ControllerTwig extends AbstractController
     #[Route("/report#kmom01", name: "report_kmom01")]
     public function reportKmom01(): Response
     {
-        return $this->redirectToRoute('report') . '#kmom01';
+        $respons = $this->redirectToRoute('report');
+        $respons->setTargetURL($respons->getTargetURL() . '#kmom01');
+        return $respons;
     }
 
     #[Route("/lucky", name: "lucky_number")]
