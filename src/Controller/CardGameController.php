@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Card\Card;
 use App\Card\CardHand;
+use App\Card\DeckOfCardsGraphic;
 use App\Card\DeckOfCards;
 
 class CardGameController extends AbstractController
@@ -17,8 +18,8 @@ class CardGameController extends AbstractController
     public function home(SessionInterface $session): Response
     {
 
-        if (!$session->get("deck") || !($session->get("deck") instanceof DeckOfCards)) {
-            $deck = new DeckOfCards();
+        if (!$session->get("deck") || !($session->get("deck") instanceof DeckOfCardsGraphic)) {
+            $deck = new DeckOfCardsGraphic();
             $session->set("deck", $deck);
         }
         return $this->render('card/home.html.twig');
@@ -39,7 +40,7 @@ class CardGameController extends AbstractController
     public function shuffleDeck(SessionInterface $session): Response
     {
 
-        $deck = new DeckOfCards();
+        $deck = new DeckOfCardsGraphic();
         $deck->shuffle();
         $session->set("deck", $deck);
         $cardsInDeckShuffled = $deck->getCardsAsString();
@@ -50,7 +51,7 @@ class CardGameController extends AbstractController
     #[Route("/game/deck/draw", name: "deck_draw")]
     public function drawCard(SessionInterface $session): Response
     {
-        $deck = $session->get("deck", new DeckOfCards());
+        $deck = $session->get("deck", new DeckOfCardsGraphic());
 
         $drawnCard = $deck->dealCard();
         if ($drawnCard == null) {
@@ -73,7 +74,7 @@ class CardGameController extends AbstractController
     #[Route("/game/deck/draw/{number}", name: "deck_draw_number")]
     public function drawCardNumber(int $number, SessionInterface $session): Response
     {
-        $deck = $session->get("deck", new DeckOfCards());
+        $deck = $session->get("deck", new DeckOfCardsGraphic());
 
         $remainingCards = count($deck->getCardsAsString());
         if ($number > $remainingCards) {

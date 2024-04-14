@@ -1,8 +1,8 @@
 <?php
 
-namespace App\DeckOfCards;
+namespace App\Card;
 
-class CardGraphic extends DeckOfCards
+class DeckOfCardsGraphic extends DeckOfCards
 {
     /**
      * @var array<string>
@@ -26,12 +26,6 @@ class CardGraphic extends DeckOfCards
     private array $clubs = ["🃑", "🃒", "🃓", "🃔", "🃕", "🃖", "🃗", "🃘", "🃙", "🃚", "🃛", "🃝", "🃞"];
 
     /**
-     * @var array<string>
-     */
-    private array $diffrentValues = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
-
-
-    /**
      * get the grapic of the card
      *
      * @param string $suit The suit of the card.
@@ -40,25 +34,42 @@ class CardGraphic extends DeckOfCards
      */
     public function getCardGraphic(string $suit, string $value): string
     {
+        /**
+         * @var array<string>
+         */
+        $diffrentValues = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+
         switch ($suit) {
             case "♠":
-                return $this->$spades[array_search($value, $diffrentValues)];
+                return $this->spades[array_search($value, $diffrentValues)];
             case "♥":
-                return $this->$hearts[array_search($value, $diffrentValues)];
+                return $this->hearts[array_search($value, $diffrentValues)];
             case "♦":
-                return $this->$diamonds[array_search($value, $diffrentValues)];
+                return $this->diamonds[array_search($value, $diffrentValues)];
             case "♣":
-                return $this->$clubs[array_search($value, $diffrentValues)];
+                return $this->clubs[array_search($value, $diffrentValues)];
             default:
                 return "";
         }
     }
 
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+
     /**
-     * @var array<string>
+     * @return array<string> Graphic version.
      */
     public function getCardsAsString(): array
     {
-        // return continue;// a map that has the key [suit;
+        $cardsAsString = [];
+        foreach ($this->cards as $card) {
+            $suit = $card->getSuit();
+            $value = $card->getValue();
+            $cardsAsString[] = $this->getCardGraphic((string) $suit, (string) $value);
+        }
+        return $cardsAsString;
     }
 }
