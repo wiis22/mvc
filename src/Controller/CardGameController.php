@@ -57,18 +57,16 @@ class CardGameController extends AbstractController
                 'warning',
                 'Finns inga mer kort att dra, shuffla leken!'
             );
-            $returnPath = $this->render('card/home.html.twig');
-        } else {
-            $drawnCard = $drawnCard->getAsString();
-            $remainingCards = count($deck->getCardsAsString());
-
-            $session->set("deck", $deck);
-            $returnPath = $this->render('card/draw.html.twig', [
-                    "drawnCard" => $drawnCard,
-                    "remainingCards" => $remainingCards
-                ]);
+            return $this->render('card/home.html.twig');
         }
-        return $returnPath;
+        $drawnCard = $drawnCard->getAsString();
+        $remainingCards = count($deck->getCardsAsString());
+
+        $session->set("deck", $deck);
+        return $this->render('card/draw.html.twig', [
+            "drawnCard" => $drawnCard,
+            "remainingCards" => $remainingCards
+        ]);
     }
 
     #[Route("/game/deck/draw/{number}", name: "deck_draw_number")]
@@ -82,26 +80,24 @@ class CardGameController extends AbstractController
                 'warning',
                 'Finns inga tillräkligt med kort att dra, shuffla leken eller testa en midre nummer!'
             );
-            $returnPath = $this->render('card/home.html.twig');
-        } else {
-
-            $drawnCards = [];
-
-            for ($i = 0; $i < $number; $i++) {
-                $drawnCard = $deck->dealCard();
-                $drawnCards[] = $drawnCard->getAsString();
-            }
-
-            $remainingCards = count($deck->getCardsAsString());
-
-            $session->set("deck", $deck);
-
-            $returnPath = $this->render('card/draw_number.html.twig', [
-                    "drawnCards" => $drawnCards,
-                    "remainingCards" => $remainingCards
-                ]);
+            return $this->render('card/home.html.twig');
         }
-        return $returnPath;
+
+        $drawnCards = [];
+
+        for ($i = 0; $i < $number; $i++) {
+            $drawnCard = $deck->dealCard();
+            $drawnCards[] = $drawnCard->getAsString();
+        }
+
+        $remainingCards = count($deck->getCardsAsString());
+
+        $session->set("deck", $deck);
+
+        return $this->render('card/draw_number.html.twig', [
+                "drawnCards" => $drawnCards,
+                "remainingCards" => $remainingCards
+        ]);
     }
 
     #[Route("/session", name: "session_view")]
