@@ -64,14 +64,16 @@ class ControllerJsonDeck
 
         if ($deckData instanceof DeckOfCards) {
             $deck = $deckData;
-        } else {
+        }
+
+        if (!($deckData instanceof DeckOfCards)) {
             $deck = new DeckOfCards();
             $deck->setCards($deckData);
         }
 
         $card = $deck->dealCard();
 
-        $remainingNumberOfCardsInDeck = count($deck->getCardsAsString());
+        $remainingCards = count($deck->getCardsAsString());
 
         $session->set("theDeck", $deck);
 
@@ -81,7 +83,7 @@ class ControllerJsonDeck
         $theCard[$value . $suit] = $card->getAsString();
         $data = [
             "drawn_card" => $theCard,
-            "remaining_cards" => $remainingNumberOfCardsInDeck
+            "remaining_cards" => $remainingCards
         ];
 
         $response = new JsonResponse($data);
@@ -98,22 +100,26 @@ class ControllerJsonDeck
 
         if ($deckData instanceof DeckOfCards) {
             $deck = $deckData;
-        } else {
+        }
+
+        if (!($deckData instanceof DeckOfCards)) {
             $deck = new DeckOfCards();
             $deck->setCards($deckData);
         }
+
+        $drawnCards = [];
 
         for ($i = 0; $i < $number; $i++) {
             $card = $deck->dealCard();
             $drawnCards[] = $card->getAsString();
         }
-        $remainingNumberOfCardsInDeck = count($deck->getCardsAsString());
+        $remainingCards = count($deck->getCardsAsString());
 
         $session->set("theDeck", $deck);
         $remainingCards = count($deck->getCardsAsString());
         $data = [
             "drawn_cards" => $drawnCards,
-            "remaining_cards" => $remainingNumberOfCardsInDeck
+            "remaining_cards" => $remainingCards
         ];
 
         $response = new JsonResponse($data);

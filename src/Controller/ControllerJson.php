@@ -11,7 +11,7 @@ class ControllerJson
     #[Route("/api")]
     public function jsonApi(): Response
     {
-        $number = random_int(0, 100);
+        // $number = random_int(0, 100);
 
         $data = [
             'api-quote' => "Kommer ge dig en quote",
