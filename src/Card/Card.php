@@ -23,7 +23,7 @@ class Card
         return $this->suit;
     }
 
-    public function setValue(): void
+    public function setValue($value): void
     {
         $this->value = $value;
     }
