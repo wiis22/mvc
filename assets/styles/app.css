@@ -69,9 +69,20 @@ h1 {
     display: flex;
 }
 
-/* .left_column {
-    
-} */
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* text-align: center; */
+}
+
+.card {
+    font-size: 8rem;
+    display: inline-block;
+    padding: 1rem;
+
+}
 
 .rigth_column {
     /* border-left: 4px double #ccc; */
