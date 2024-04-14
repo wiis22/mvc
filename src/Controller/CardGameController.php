@@ -28,7 +28,7 @@ class CardGameController extends AbstractController
     public function showDeck(SessionInterface $session): Response
     {
         $deck = $session->get("deck");
-        
+
         $cardsInDeck = $deck->getCardsAsString();
 
         return $this->render('card/deck.html.twig', ["cardsInDeck" => $cardsInDeck]);
