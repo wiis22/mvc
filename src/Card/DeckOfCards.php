@@ -4,6 +4,9 @@ namespace App\Card;
 
 class DeckOfCards
 {
+    /**
+     * @var array<\App\Card\Card>
+     */
     protected $cards = [];
 
     public function __construct()
@@ -33,6 +36,9 @@ class DeckOfCards
         return array_pop($this->cards);
     }
 
+    /**
+     * @return array<string>
+     */
     public function getCardsAsString(): array
     {
         $cardsAsString = [];
@@ -43,11 +49,17 @@ class DeckOfCards
         return $cardsAsString;
     }
 
+    /**
+     * @return array<\App\Card\Card>
+     */
     public function getCards(): array
     {
         return $this->cards;
     }
 
+    /**
+     * @param array<\App\Card\Card> $cards
+     */
     public function setCards(array $cards): void
     {
         $this->cards = $cards;

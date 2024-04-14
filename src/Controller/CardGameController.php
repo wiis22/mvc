@@ -17,7 +17,7 @@ class CardGameController extends AbstractController
     public function home(SessionInterface $session): Response
     {
 
-        if (!($session->get("deck"))) {
+        if (!$session->get("deck") || !($session->get("deck") instanceof DeckOfCards)) {
             $deck = new DeckOfCards();
             $session->set("deck", $deck);
         }
@@ -28,6 +28,7 @@ class CardGameController extends AbstractController
     public function showDeck(SessionInterface $session): Response
     {
         $deck = $session->get("deck");
+        
         $cardsInDeck = $deck->getCardsAsString();
 
         return $this->render('card/deck.html.twig', ["cardsInDeck" => $cardsInDeck]);

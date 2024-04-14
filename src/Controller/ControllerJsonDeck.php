@@ -78,9 +78,11 @@ class ControllerJsonDeck
         $session->set("theDeck", $deck);
 
         $theCard = [];
-        $suit = $card->getSuit();
-        $value = $card->getValue();
-        $theCard[$value . $suit] = $card->getAsString();
+        if ($card instanceof Card) {
+            $suit = $card->getSuit();
+            $value = $card->getValue();
+            $theCard[$value . $suit] = $card->getAsString();
+        }
         $data = [
             "drawn_card" => $theCard,
             "remaining_cards" => $remainingCards
@@ -94,7 +96,7 @@ class ControllerJsonDeck
     }
 
     #[Route("/api/deck/draw/{number}", methods: ["POST"])]
-    public function drawCardsNumber(SessionInterface $session, $number): Response
+    public function drawCardsNumber(SessionInterface $session, int $number): Response
     {
         $deckData = $session->get("theDeck");
 
@@ -110,8 +112,13 @@ class ControllerJsonDeck
         $drawnCards = [];
 
         for ($i = 0; $i < $number; $i++) {
-            $card = $deck->dealCard();
-            $drawnCards[] = $card->getAsString();
+            if ($deck instanceof DeckOfCards) {
+                $card = $deck->dealCard();
+                if ($card instanceof Card) {
+                    $drawnCards[] = $card->getAsString();
+                }
+            }
+
         }
         $remainingCards = count($deck->getCardsAsString());
 
