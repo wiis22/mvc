@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Game{% endblock %}
+
+{% block body %}
+<h1 class="pigh1">Spel Information</h1>
+
+{{ include('pig/flash.html.twig') }}
+
+<p>Denna sida är bas sidan för kort spelet 21. Här är en länk till spelregler till <a href="https://sv.wikipedia.org/wiki/Tjugoett_(kortspel)">kortspelet 21</a>.</p>
+
+<h3>Kort beskrvinign av spelregler:</h3>
+<p> Spelets idé är att med två eller flera kort försöka uppnå det sammanlagda värdet 21, eller komma så nära som möjligt utan att överskrida 21.
+ Essen är värda valfritt 1 eller 14, kungarna 13, damerna 12, knektarna 11. Nummerkorten har samma värden som nummret på kortet.
+<p> Om summan av korten är 21 vinner spelaren från banken ett belopp lika stort som insatsen.
+ Är summan större än 21 har spelaren ”spruckit” eller ”blivit tjock” och förlorar till banken.
+ Om summan är under 21 kan spelaren antingen förklara sig nöjd eller begära ytterligare kort för att komma närmare 21, men då också riskera att spricka.
+</p>
+<a href="{{ path('doc') }}"> Dokumentation </a>
+
+
+<h2 class="spellänk"><a href="{{ path('start') }}">Börja spela 21!</a></h2>
+    {# <a href="{{ path('deck_shuffle') }}">Shuffle the Deck</a>
+    <a href="{{ path('deck_draw') }}">Draw a card from Deck</a>
+    <a href="{{ path('session_view') }}">Session</a>
+    <a href="{{ path('session_delete') }}">Session Delete</a> #}
+
+{# <p> #}
+{# Jag anväder mig utav tre huvudklasser, Card, Cardhand och DeckOfCards. #}
+
+{% endblock %}
