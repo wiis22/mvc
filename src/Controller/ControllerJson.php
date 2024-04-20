@@ -3,35 +3,36 @@
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ControllerJson
+class ControllerJson extends AbstractController
 {
-    #[Route("/api")]
-    public function jsonApi(): Response
+    #[Route("/api", name: "apier")]
+    public function apier(): Response
     {
         // $number = random_int(0, 100);
 
         $data = [
-            'api-quote' => "Kommer ge dig en quote",
-            'api-deck' => "Kommer ge dig en kortlek",
-            'api-deck-shuffle' => "Kommer att shuffla kortleken",
-            'api-deck-draw' => "drar 1 kort",
-            'api-deck-draw-:number' => "drar 1 eller :number antal kort",
+            'api/quote' => ['description' => "Kommer ge dig en quote", 'method' => "GET"],
+            'api/deck' => ['description' =>"Kommer ge dig en kortlek", 'method' => "GET"],
+            'api/deck/shuffle' => ['description' =>"Kommer att shuffla kortleken", 'method' => "POST"],
+            'api/deck/draw' => ['description' =>"drar 1 kort", 'method' => "POST"] ,
+            'api/deck/draw/{number}' => ['description' =>"drar 1 eller :number antal kort", 'method' => "POST"],
         ];
 
         // return new JsonResponse($data);
 
-        $response = new JsonResponse($data);
-        $response->setEncodingOptions(
-            $response->getEncodingOptions() | JSON_PRETTY_PRINT
-        );
-        return $response;
+        // $response = new JsonResponse($data);
+        // $response->setEncodingOptions(
+        //     $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        // );
+        return $this->render('api.html.twig', ["data" => $data]);
     }
 
-    #[Route("/api/quote")]
-    public function jsonApier(): Response
+    #[Route("/api/quote", name: "quote")]
+    public function quote(): Response
     {
         $quotes = [
             "Frankly, my dear, I don't give a damn",

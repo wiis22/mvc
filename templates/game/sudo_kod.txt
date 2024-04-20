@@ -1,0 +1,35 @@
+Funtion SpelRunda:
+    Spelare_hand = array
+    bank_hand = array
+
+    SPELARE_TAR_KORT()
+    VISA_KORT(Spelare_hand)
+
+    om (summa(Spelare_hand) > 21):
+        Medelande = "Du har över 21, Banken Vinner!"
+        AVSLUTE_OMGÅNG()
+
+    SPELARENS ALTERNATIV:
+        val = ALTERNATIV
+        OM val == "Dra kort":
+            SPELARE_TAR_KORT()
+            VISA_KORT(Spelare_hand)
+
+            om summa(Spelare_hand > 21):
+                Medelande = "Du har över 21, Banken Vinner!"
+                AVSLUTE_OMGÅNG()
+
+            GÅR TILLBAKA TILL SPELARES ALTERNATIV()
+
+    BAKENS_TUR:
+    sålänge summa(bank_hand) < 17:
+        BANK_TAR_KORT()
+        VISA_KORT(bank_hand)
+
+
+    Om summa(bank_hand) > 21 eller summa(bank_hand) < summa(Spelare_hand):
+        Medelande = "Spelare vinner!"
+    annars:
+        Medelande = "Banken vinner!"
+
+    AVSLUTE_OMGÅNG()
