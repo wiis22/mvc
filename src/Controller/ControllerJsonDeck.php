@@ -2,15 +2,17 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use App\Card\Card;
 use App\Card\CardHand;
 use App\Card\DeckOfCards;
 
-class ControllerJsonDeck
+class ControllerJsonDeck extends AbstractController
 {
     #[Route("/api/deck", methods: ["GET"])]
     public function jsonApi(SessionInterface $session): Response
@@ -50,11 +52,16 @@ class ControllerJsonDeck
 
         $session->set("theDeck", $deck);
 
-        $response = new JsonResponse($theDeck);
+        $responseData = [
+            'Message' => 'Leken ar blandad',
+            'shuffled_deck' => $theDeck
+        ];
+
+        $response = new JsonResponse($responseData);
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
-        return $response;
+        return  $response;
     }
 
     #[Route("/api/deck/draw", methods: ["POST"])]
@@ -92,12 +99,16 @@ class ControllerJsonDeck
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
-        return $response;
+        return  $response;
     }
 
+
     #[Route("/api/deck/draw/{number}", methods: ["POST"])]
-    public function drawCardsNumber(SessionInterface $session, int $number): Response
+    public function drawCardsNumber(SessionInterface $session, Request $request): Response
     {
+        $number = $request->request->getInt('number', 0);
+        print($number);
+
         $deckData = $session->get("theDeck");
 
         if ($deckData instanceof DeckOfCards) {
@@ -111,7 +122,7 @@ class ControllerJsonDeck
 
         $drawnCards = [];
 
-        for ($i = 0; $i < $number; $i++) {
+        for ($i = 0; $i < (int)$number; $i++) {
             if ($deck instanceof DeckOfCards) {
                 $card = $deck->dealCard();
                 if ($card instanceof Card) {
@@ -123,7 +134,7 @@ class ControllerJsonDeck
         $remainingCards = count($deck->getCardsAsString());
 
         $session->set("theDeck", $deck);
-        $remainingCards = count($deck->getCardsAsString());
+
         $data = [
             "drawn_cards" => $drawnCards,
             "remaining_cards" => $remainingCards
@@ -133,6 +144,6 @@ class ControllerJsonDeck
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
-        return $response;
+        return  $response;
     }
 }

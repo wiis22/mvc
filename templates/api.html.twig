@@ -1,0 +1,56 @@
+{% extends "base.html.twig" %}
+
+{% block title %}OLika Apier{% endblock %}
+
+{% block body %}
+<h1>Apier: </h1>
+
+<p>Länkar till olika apier:
+<ul>
+    {% for pathLink, info in data %}
+        {% if info.method == "GET" %}
+            <a href="{{ pathLink }}">{{ info.description }}</a>
+        {% elseif info.method == "POST" %}
+            <form action="{{ pathLink }}" method="POST" class="api-form">
+                {% if pathLink == 'api/deck/draw/{number}' %}
+                    <input type="number" name="number" placeholder="Antal kort" required>
+                {% endif %}
+                <input type="submit" value="{{ info.description }}">
+            </form>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+<div id="response">
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+<script>
+    // Listen for form submission
+    document.querySelectorAll('.api-form').forEach(form => {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Fetch the form's action attribute
+            const url = form.getAttribute('action');
+
+            // Fetch form data
+            const formData = new FormData(form);
+
+            // Send a POST request with form data
+            fetch(url, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display response in the response div
+                document.getElementById('response').innerHTML = JSON.stringify(data);
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    });
+</script>
+{% endblock %}
