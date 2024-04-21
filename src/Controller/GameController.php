@@ -23,6 +23,11 @@ class GameController extends AbstractController
     #[Route("/game/start", name: "start")]
     public function start(): Response
     {
+        if (!$session->get("deck21") || !($session->get("deck21") instanceof DeckOfCardsGraphic)) {
+            $deck = new DeckOfCardsGraphic();
+            $deck->shuffle();
+            $session->set("deck21", $deck);
+        }
         return $this->render('game/start.html.twig');
     }
 
