@@ -7,7 +7,11 @@ class CardHand
     /**
      * @var array<\App\Card\Card|null>
      */
-    protected array $cards = [];
+    protected array $cards;
+
+    public function __construct() {
+        $this->cards = [];
+    }
 
     public function deal(int $numberOfCards, DeckOfCardsGraphic $deck): void
     {

@@ -26,13 +26,13 @@ class GameController extends AbstractController
     {
         $session->clear();
         if (!$session->get("player_hand") || !($session->get("player_hand") instanceof DeckOfCardsGraphic)) {
-            $player_hand = new Player();
-            $session->set("player_hand", $player_hand);
+            $playerHand = new Player();
+            $session->set("player_hand", $playerHand);
         }
 
         if (!$session->get("bank_hand") || !($session->get("bank_hand") instanceof DeckOfCardsGraphic)) {
-            $Bank_hand = new Player();
-            $session->set("bank_hand", $Bank_hand);
+            $bankHand = new Player();
+            $session->set("bank_hand", $bankHand);
         }
 
         if (!$session->get("deck21") || !($session->get("deck21") instanceof DeckOfCardsGraphic)) {
@@ -45,23 +45,23 @@ class GameController extends AbstractController
     }
 
     #[Route("/game/draw", name: "draw_21", methods: ['POST'])]
-    public function draw( SessionInterface $session ): Response
+    public function draw(SessionInterface $session): Response
     {
         $deck = $session->get("deck21");
-        $player_hand = $session->get("player_hand");
+        $playerHand = $session->get("player_hand");
 
 
 
-        if ($player_hand == null) {
+        if ($playerHand == null) {
             $this->addFlash(
                 'warning',
                 'F mågot gick fel klicka på session Delete!'
             );
             return $this->render('game/home.html.twig');
         }
-        $player_hand->deal(1, $deck);
-        $test = $player_hand->getPCardsAsString();
-        $tot = $player_hand->getPPoints();
+        $playerHand->deal(1, $deck);
+        $test = $playerHand->getPCardsAsString();
+        $tot = $playerHand->getPPoints();
         if ($tot >= 21) {
             if ($tot === 21) {
                 $this->addFlash(
@@ -85,13 +85,14 @@ class GameController extends AbstractController
     }
 
     #[Route("/game/stop", name: "stop_21", methods: ['POST'])]
-    public function stop(SessionInterface $session): Response {
+    public function stop(SessionInterface $session): Response
+    {
         //här ska det vara baken som gör sitt
         $deck = $session->get("deck21");
-        $player_hand = $session->get("player_hand_string");
-        $player_tot = $session->get("player_tot");
-        $bank_hand = $session->get("bank_hand");
-        if ($player_hand == null) {
+        $playerHand = $session->get("player_hand_string");
+        $playerTot = $session->get("player_tot");
+        $bankHand = $session->get("bank_hand");
+        if ($playerHand == null) {
             $this->addFlash(
                 'warning',
                 'Player måste dra kort först!'
@@ -101,24 +102,28 @@ class GameController extends AbstractController
 
         $tot = 0;
         while ($tot <= 17) {
-            $bank_hand->deal(1, $deck);
-            $tot = $bank_hand->getPPoints();
+            $bankHand->deal(1, $deck);
+            $tot = $bankHand->getPPoints();
         }
 
-        $test = $bank_hand->getPCardsAsString();
+        $test = $bankHand->getPCardsAsString();
 
-        if ($tot > 21 || $tot < $player_tot) {
+        $session->set("bank_hand_string", $test);
+        $session->set("bank_tot", $tot);
+
+
+        if ($tot > 21 || $tot < $playerTot) {
             $this->addFlash(
                 'notice',
                 'Du vann Grattis!'
             );
-            return  $this->render('game/bank.html.twig', [ "p_hand" => $player_hand, "p_tot" => $player_tot, "b_hand" => $test, "b_tot" => $tot ]);
+            return  $this->render('game/bank.html.twig', [ "p_hand" => $playerHand, "p_tot" => $playerTot, "b_hand" => $test, "b_tot" => $tot ]);
         }
         $this->addFlash(
             'warning',
             'Baken vann! Du förlorade!'
         );
-        return  $this->render('game/bank.html.twig', [ "p_hand" => $player_hand, "p_tot" => $player_tot, "b_hand" => $test, "b_tot" => $tot ]);
+        return  $this->render('game/bank.html.twig', [ "p_hand" => $playerHand, "p_tot" => $playerTot, "b_hand" => $test, "b_tot" => $tot ]);
     }
 
     #[Route("/game/doc", name: "doc")]

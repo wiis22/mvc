@@ -5,45 +5,57 @@ namespace App\AGame21;
 use App\Card\CardHand;
 use App\Card\DeckOfCardsGraphic;
 
-
 class Player extends CardHand
 {
-    public function getPCardsAsString(): array {
+    /**
+     * @return array<string>
+     */
+    public function getPCardsAsString(): array
+    {
         $deck = new DeckOfCardsGraphic();
-        $deck->setCards($this->getCards());
+        $cards = $this->getCards();
+        $deck->setCards($cards); // @phpstan-ignore-line
         return $deck->getCardsAsString();
     }
 
-    public function getPPoints(): int {
+    /**
+     * @return int total value of hand
+     */
+
+    public function getPPoints(): int
+    {
         $cards = $this->getCards();
         $tot = 0;
         $aceC = 0;
+        if($cards !== null) {
+            foreach ($cards as $card) {
+                if ($card !== null) {
+                    $value = $card->getValue();
 
-        foreach ($cards as $card) {
-            $value = $card->getValue();
+                    switch ($value) {
+                        case 'A':
+                            $aceC++;
+                            $tot += 1;
+                            break;
+                        case 'K':
+                            $tot += 13;
+                            break;
+                        case 'Q':
+                            $tot += 12;
+                            break;
+                        case 'J':
+                            $tot += 11;
+                            break;
 
-            switch ($value) {
-                case 'A':
-                    $aceC++;
-                    $tot += 1;
-                    break;
-                case 'K':
-                    $tot += 13;
-                    break;
-                case 'Q':
-                    $tot += 12;
-                    break;
-                case 'J':
-                    $tot += 11;
-                    break;
-
-                default:
-                    $tot += (int) $value;
-                    break;
+                        default:
+                            $tot += (int) $value;
+                            break;
+                        }
+                }
             }
         }
 
-        for ($i=0; $i < $aceC; $i++) { 
+        for ($i = 0; $i < $aceC; $i++) {
             if ($tot + 13 <= 21) {
                 $tot += 13;
             }
@@ -53,7 +65,7 @@ class Player extends CardHand
     }
 
     /**
-     * @param array<\App\Card\Card> $cards an array of cards
+     * @param array<\App\Card\Card|null> $cards an array of cards
      */
     public function setCards(array $cards): void
     {

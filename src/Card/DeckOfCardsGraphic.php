@@ -4,11 +4,15 @@ namespace App\Card;
 
 class DeckOfCardsGraphic extends DeckOfCards
 {
+    // /**
+    //  * @var array<\App\Card\Card>
+    //  */
+    // protected array $cards = [];
+
     /**
      * @var array<string>
      */
     private array $spades = ["🂡", "🂢", "🂣", "🂤", "🂥", "🂦", "🂧", "🂨", "🂩", "🂪", "🂫", "🂭", "🂮"];
-
 
     /**
      * @var array<string>
