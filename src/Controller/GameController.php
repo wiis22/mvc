@@ -62,26 +62,29 @@ class GameController extends AbstractController
         $playerHand->deal(1, $deck);
         $test = $playerHand->getPCardsAsString();
         $tot = $playerHand->getPPoints();
+
+        $session->set("deck21", $deck);
+        $session->set("player_hand_string", $test);
+        $session->set("player_tot", $tot);
+
+
         if ($tot >= 21) {
             if ($tot === 21) {
                 $this->addFlash(
                     'notice',
                     'Du vann Grattis! Du fick 21!!!'
                 );
-                return  $this->render('game/bank.html.twig', [ "p_hand" => $test, "p_tot" => $tot]);
+                return  $this->render('game/play.html.twig', [ "p_hand" => $test, "p_tot" => $tot]);
             }
             $this->addFlash(
                 'warning',
                 'Du blev stor! Du förlorade!'
             );
-            return  $this->render('game/bank.html.twig', [ "p_hand" => $test, "p_tot" => $tot]);
+            return  $this->render('game/play.html.twig', [ "p_hand" => $test, "p_tot" => $tot]);
         }
 
-        $session->set("deck21", $deck);
-        $session->set("player_hand_string", $test);
-        $session->set("player_tot", $tot);
 
-        return $this->render('game/play.html.twig', [ "p_hand" => $test, "tot" => $tot ]);
+        return $this->render('game/play.html.twig', [ "p_hand" => $test, "p_tot" => $tot ]);
     }
 
     #[Route("/game/stop", name: "stop_21", methods: ['POST'])]
@@ -100,13 +103,24 @@ class GameController extends AbstractController
             return $this->render('game/start.html.twig');
         }
 
+
+
         $tot = 0;
-        while ($tot <= 17) {
+        while ($tot < 17) {
             $bankHand->deal(1, $deck);
             $tot = $bankHand->getPPoints();
         }
 
         $test = $bankHand->getPCardsAsString();
+
+        if ($playerTot > 21) {
+            $tot = 21;
+            $this->addFlash(
+                'notice',
+                'Du vann Grattis!'
+            );
+            return  $this->render('game/bank.html.twig', [ "p_hand" => $playerHand, "p_tot" => $playerTot, "b_hand" => $test, "b_tot" => $tot ]);
+        }
 
         $session->set("bank_hand_string", $test);
         $session->set("bank_tot", $tot);

@@ -9,7 +9,8 @@ class CardHand
      */
     protected array $cards;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->cards = [];
     }
 

@@ -50,7 +50,7 @@ class Player extends CardHand
                         default:
                             $tot += (int) $value;
                             break;
-                        }
+                    }
                 }
             }
         }
