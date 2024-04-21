@@ -8,18 +8,11 @@ class CardHand
      * @var array<\App\Card\Card|null>
      */
     protected array $cards = [];
-    protected DeckOfCards $deck;
 
-    public function __construct(int $numberOfCards, DeckOfCards $deck)
-    {
-        $this->deal($numberOfCards);
-        $this->deck = $deck;
-    }
-
-    public function deal(int $numberOfCards): void
+    public function deal(int $numberOfCards, DeckOfCards $deck): void
     {
         for ($i = 0; $i < $numberOfCards; $i++) {
-            $this->cards[] = $this->deck->dealCard();
+            $this->cards[] = $deck->dealCard();
         }
     }
 

@@ -7,4 +7,28 @@
 
 {{ include('pig/flash.html.twig') }}
 
+
+<div class="holder">
+    <div class="left_column">
+        <h3>Lite sudo kod till projectet:</h3>
+        <pre>
+        {{ include('game/sudo_kod.txt')}}
+        </pre>
+    </div>
+     <div class="rigth_column">
+        <h3>Flödeschema för hur tanken kring koden:</h3>
+        <img src="{{ asset('img/fgame21.png') }}" alt="Ett flödesschema">
+    </div>
+
+</div>
+
+<h2> Eventuella klasser som jag tror jag kommer behöva: </h2>
+
+<h3>Bank:</h3>
+<p>Bank klassen tänker jag ska hantera allt som har med baken att göra. Om den ska dra kort eller om den ska stanna</p>
+<h3>Player:</h3>
+<p></p>
+<h3>GameTable:</h3>
+<p></p>
+
 {% endblock %}
