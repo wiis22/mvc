@@ -9,7 +9,7 @@ class CardHand
      */
     protected array $cards = [];
 
-    public function deal(int $numberOfCards, DeckOfCards $deck): void
+    public function deal(int $numberOfCards, DeckOfCardsGraphic $deck): void
     {
         for ($i = 0; $i < $numberOfCards; $i++) {
             $this->cards[] = $deck->dealCard();

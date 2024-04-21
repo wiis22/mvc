@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Game 21{% endblock %}
+
+{% block body %}
+<h1 class="g21h1">Spel 21! [spelar]</h1>
+
+{{ include('pig/flash.html.twig') }}
+
+<div class="spelplan">
+    <div class="player_column">
+        <h3>Player</h3>
+        {% if p_hand %}
+            <ul class="cards">
+                {% for card in p_hand %}
+                    <li class="card">{{ card }}</li>
+                {% endfor %}
+            </ul>
+            <p> Total poäng: {{ tot }}
+        {% endif %}
+    </div>
+     <div class="bank_column">
+        <h3>Bank</h3>
+    </div>
+</div>
+
+<form method="post" action="">
+    <p>
+        <input type="submit" name="draw" value="Draw"
+            onClick="this.form.action='{{ path('draw_21') }}';"
+        >
+        <input type="submit" name="stop" value="Stop"
+            onClick="this.form.action='{{ path('stop_21') }}';"
+        >
+    </p>
+</form>
+
+
+{% endblock %}
