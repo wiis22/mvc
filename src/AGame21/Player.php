@@ -51,4 +51,12 @@ class Player extends CardHand
 
         return $tot;
     }
+
+    /**
+     * @param array<\App\Card\Card> $cards an array of cards
+     */
+    public function setCards(array $cards): void
+    {
+        $this->cards = $cards;
+    }
 }

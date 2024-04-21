@@ -12,7 +12,6 @@ use App\Card\CardHand;
 use App\Card\DeckOfCardsGraphic;
 use App\Card\DeckOfCards;
 use App\AGame21\Player;
-use App\AGame21\Bank;
 
 class GameController extends AbstractController
 {
@@ -25,14 +24,15 @@ class GameController extends AbstractController
     #[Route("/game/start", name: "start")]
     public function start(SessionInterface $session): Response
     {
+        $session->clear();
         if (!$session->get("player_hand") || !($session->get("player_hand") instanceof DeckOfCardsGraphic)) {
             $player_hand = new Player();
             $session->set("player_hand", $player_hand);
         }
 
-        if (!$session->get("Bank_hand") || !($session->get("Bank_hand") instanceof DeckOfCardsGraphic)) {
+        if (!$session->get("bank_hand") || !($session->get("bank_hand") instanceof DeckOfCardsGraphic)) {
             $Bank_hand = new Player();
-            $session->set("Bank_hand", $Bank_hand);
+            $session->set("bank_hand", $Bank_hand);
         }
 
         if (!$session->get("deck21") || !($session->get("deck21") instanceof DeckOfCardsGraphic)) {
@@ -66,23 +66,20 @@ class GameController extends AbstractController
             if ($tot === 21) {
                 $this->addFlash(
                     'notice',
-                    'Du vann Grattis!'
+                    'Du vann Grattis! Du fick 21!!!'
                 );
-                //rensa session
-                $session->clear();
-                return $this->render('game/home.html.twig');
+                return  $this->render('game/bank.html.twig', [ "p_hand" => $test, "p_tot" => $tot]);
             }
             $this->addFlash(
                 'warning',
                 'Du blev stor! Du förlorade!'
             );
-            //rensa session
-            $session->clear();
-            return $this->render('game/home.html.twig');
+            return  $this->render('game/bank.html.twig', [ "p_hand" => $test, "p_tot" => $tot]);
         }
 
         $session->set("deck21", $deck);
-        $session->set("player_hand", $player_hand);
+        $session->set("player_hand_string", $test);
+        $session->set("player_tot", $tot);
 
         return $this->render('game/play.html.twig', [ "p_hand" => $test, "tot" => $tot ]);
     }
@@ -91,7 +88,8 @@ class GameController extends AbstractController
     public function stop(SessionInterface $session): Response {
         //här ska det vara baken som gör sitt
         $deck = $session->get("deck21");
-        $player_hand = $session->get("player_hand");
+        $player_hand = $session->get("player_hand_string");
+        $player_tot = $session->get("player_tot");
         $bank_hand = $session->get("bank_hand");
         if ($player_hand == null) {
             $this->addFlash(
@@ -101,11 +99,26 @@ class GameController extends AbstractController
             return $this->render('game/start.html.twig');
         }
 
-        $bank_hand->deal(1, $deck);
-        $test = $bank_hand->getPCardsAsString();
-        $tot = $bank_hand->getPPoints();
+        $tot = 0;
+        while ($tot <= 17) {
+            $bank_hand->deal(1, $deck);
+            $tot = $bank_hand->getPPoints();
+        }
 
-        return $this->redirectToRoute('start');
+        $test = $bank_hand->getPCardsAsString();
+
+        if ($tot > 21 || $tot < $player_tot) {
+            $this->addFlash(
+                'notice',
+                'Du vann Grattis!'
+            );
+            return  $this->render('game/bank.html.twig', [ "p_hand" => $player_hand, "p_tot" => $player_tot, "b_hand" => $test, "b_tot" => $tot ]);
+        }
+        $this->addFlash(
+            'warning',
+            'Baken vann! Du förlorade!'
+        );
+        return  $this->render('game/bank.html.twig', [ "p_hand" => $player_hand, "p_tot" => $player_tot, "b_hand" => $test, "b_tot" => $tot ]);
     }
 
     #[Route("/game/doc", name: "doc")]
