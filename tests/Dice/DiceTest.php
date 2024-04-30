@@ -21,4 +21,18 @@ class DiceTest extends TestCase
         $res = $die->getAsString();
         $this->assertNotEmpty($res);
     }
+
+    /**
+     * Roll the dice and assert value is within bounds.
+     */
+    public function testRollDice()
+    {
+        $die = new Dice();
+        $res = $die->roll();
+        $this->assertIsInt($res);
+
+        $res = $die->getValue();
+        $this->assertTrue($res >= 1);
+        $this->assertTrue($res <= 6);
+    }
 }
