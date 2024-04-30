@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1714472472">
-  <project timestamp="1714472472">
+<coverage generated="1714474933">
+  <project timestamp="1714474933">
     <file name="/home/axaite/dbwebb-kurser/mvc/me/report/src/AGame21/Player.php">
       <class name="App\AGame21\Player" namespace="global">
-        <metrics complexity="13" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="0" elements="34" coveredelements="0"/>
+        <metrics complexity="13" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="31" elements="34" coveredelements="34"/>
       </class>
-      <line num="13" type="method" name="getPCardsAsString" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="15" type="stmt" count="0"/>
-      <line num="16" type="stmt" count="0"/>
-      <line num="17" type="stmt" count="0"/>
-      <line num="18" type="stmt" count="0"/>
-      <line num="25" type="method" name="getPPoints" visibility="public" complexity="11" crap="132" count="0"/>
-      <line num="27" type="stmt" count="0"/>
-      <line num="28" type="stmt" count="0"/>
-      <line num="29" type="stmt" count="0"/>
-      <line num="30" type="stmt" count="0"/>
-      <line num="31" type="stmt" count="0"/>
-      <line num="32" type="stmt" count="0"/>
-      <line num="33" type="stmt" count="0"/>
-      <line num="36" type="stmt" count="0"/>
-      <line num="37" type="stmt" count="0"/>
-      <line num="38" type="stmt" count="0"/>
-      <line num="39" type="stmt" count="0"/>
-      <line num="40" type="stmt" count="0"/>
-      <line num="41" type="stmt" count="0"/>
-      <line num="42" type="stmt" count="0"/>
-      <line num="43" type="stmt" count="0"/>
-      <line num="44" type="stmt" count="0"/>
-      <line num="45" type="stmt" count="0"/>
-      <line num="46" type="stmt" count="0"/>
-      <line num="47" type="stmt" count="0"/>
-      <line num="48" type="stmt" count="0"/>
-      <line num="51" type="stmt" count="0"/>
-      <line num="52" type="stmt" count="0"/>
-      <line num="58" type="stmt" count="0"/>
-      <line num="59" type="stmt" count="0"/>
-      <line num="60" type="stmt" count="0"/>
-      <line num="64" type="stmt" count="0"/>
-      <line num="70" type="method" name="setCards" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="72" type="stmt" count="0"/>
-      <metrics loc="75" ncloc="65" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="0" elements="34" coveredelements="0"/>
+      <line num="13" type="method" name="getPCardsAsString" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="15" type="stmt" count="1"/>
+      <line num="16" type="stmt" count="1"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="18" type="stmt" count="1"/>
+      <line num="25" type="method" name="getPPoints" visibility="public" complexity="11" crap="11" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="28" type="stmt" count="1"/>
+      <line num="29" type="stmt" count="1"/>
+      <line num="30" type="stmt" count="1"/>
+      <line num="31" type="stmt" count="1"/>
+      <line num="32" type="stmt" count="1"/>
+      <line num="33" type="stmt" count="1"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="37" type="stmt" count="1"/>
+      <line num="38" type="stmt" count="1"/>
+      <line num="39" type="stmt" count="1"/>
+      <line num="40" type="stmt" count="1"/>
+      <line num="41" type="stmt" count="1"/>
+      <line num="42" type="stmt" count="1"/>
+      <line num="43" type="stmt" count="1"/>
+      <line num="44" type="stmt" count="1"/>
+      <line num="45" type="stmt" count="1"/>
+      <line num="46" type="stmt" count="1"/>
+      <line num="47" type="stmt" count="1"/>
+      <line num="48" type="stmt" count="1"/>
+      <line num="51" type="stmt" count="1"/>
+      <line num="52" type="stmt" count="1"/>
+      <line num="58" type="stmt" count="1"/>
+      <line num="59" type="stmt" count="1"/>
+      <line num="60" type="stmt" count="1"/>
+      <line num="64" type="stmt" count="1"/>
+      <line num="70" type="method" name="setCards" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="72" type="stmt" count="2"/>
+      <metrics loc="75" ncloc="65" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="31" elements="34" coveredelements="34"/>
     </file>
     <file name="/home/axaite/dbwebb-kurser/mvc/me/report/src/Card/Card.php">
       <class name="App\Card\Card" namespace="global">
         <metrics complexity="6" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="13" coveredelements="13"/>
       </class>
-      <line num="10" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="12"/>
-      <line num="12" type="stmt" count="12"/>
-      <line num="13" type="stmt" count="12"/>
-      <line num="16" type="method" name="getValue" visibility="public" complexity="1" crap="1" count="5"/>
-      <line num="18" type="stmt" count="5"/>
-      <line num="21" type="method" name="getSuit" visibility="public" complexity="1" crap="1" count="4"/>
-      <line num="23" type="stmt" count="4"/>
+      <line num="10" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="14"/>
+      <line num="12" type="stmt" count="14"/>
+      <line num="13" type="stmt" count="14"/>
+      <line num="16" type="method" name="getValue" visibility="public" complexity="1" crap="1" count="7"/>
+      <line num="18" type="stmt" count="7"/>
+      <line num="21" type="method" name="getSuit" visibility="public" complexity="1" crap="1" count="5"/>
+      <line num="23" type="stmt" count="5"/>
       <line num="26" type="method" name="setValue" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="28" type="stmt" count="1"/>
       <line num="31" type="method" name="setSuit" visibility="public" complexity="1" crap="1" count="1"/>
@@ -64,27 +64,27 @@
       <class name="App\Card\CardHand" namespace="global">
         <metrics complexity="4" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
       </class>
-      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="14" type="stmt" count="2"/>
+      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="14" type="stmt" count="4"/>
       <line num="17" type="method" name="deal" visibility="public" complexity="2" crap="2" count="1"/>
       <line num="19" type="stmt" count="1"/>
       <line num="20" type="stmt" count="1"/>
-      <line num="27" type="method" name="getCards" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="29" type="stmt" count="2"/>
+      <line num="27" type="method" name="getCards" visibility="public" complexity="1" crap="1" count="4"/>
+      <line num="29" type="stmt" count="4"/>
       <metrics loc="32" ncloc="26" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="7" coveredelements="7"/>
     </file>
     <file name="/home/axaite/dbwebb-kurser/mvc/me/report/src/Card/DeckOfCards.php">
       <class name="App\Card\DeckOfCards" namespace="global">
         <metrics complexity="10" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="21" coveredelements="21"/>
       </class>
-      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="7"/>
-      <line num="14" type="stmt" count="7"/>
-      <line num="17" type="method" name="initDeck" visibility="public" complexity="3" crap="3" count="7"/>
-      <line num="19" type="stmt" count="7"/>
-      <line num="20" type="stmt" count="7"/>
-      <line num="22" type="stmt" count="7"/>
-      <line num="23" type="stmt" count="7"/>
-      <line num="24" type="stmt" count="7"/>
+      <line num="12" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="8"/>
+      <line num="14" type="stmt" count="8"/>
+      <line num="17" type="method" name="initDeck" visibility="public" complexity="3" crap="3" count="8"/>
+      <line num="19" type="stmt" count="8"/>
+      <line num="20" type="stmt" count="8"/>
+      <line num="22" type="stmt" count="8"/>
+      <line num="23" type="stmt" count="8"/>
+      <line num="24" type="stmt" count="8"/>
       <line num="29" type="method" name="shuffle" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="31" type="stmt" count="1"/>
       <line num="34" type="method" name="dealCard" visibility="public" complexity="1" crap="1" count="1"/>
@@ -96,18 +96,18 @@
       <line num="49" type="stmt" count="1"/>
       <line num="55" type="method" name="getCards" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="57" type="stmt" count="2"/>
-      <line num="63" type="method" name="setCards" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="65" type="stmt" count="1"/>
+      <line num="63" type="method" name="setCards" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="65" type="stmt" count="2"/>
       <metrics loc="68" ncloc="56" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="21" coveredelements="21"/>
     </file>
     <file name="/home/axaite/dbwebb-kurser/mvc/me/report/src/Card/DeckOfCardsGraphic.php">
       <class name="App\Card\DeckOfCardsGraphic" namespace="global">
         <metrics complexity="9" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="20" coveredelements="20"/>
       </class>
-      <line num="39" type="method" name="getCardGraphic" visibility="public" complexity="6" crap="6" count="2"/>
-      <line num="44" type="stmt" count="2"/>
-      <line num="47" type="stmt" count="2"/>
-      <line num="48" type="stmt" count="1"/>
+      <line num="39" type="method" name="getCardGraphic" visibility="public" complexity="6" crap="6" count="3"/>
+      <line num="44" type="stmt" count="3"/>
+      <line num="47" type="stmt" count="3"/>
+      <line num="48" type="stmt" count="2"/>
       <line num="49" type="stmt" count="2"/>
       <line num="50" type="stmt" count="1"/>
       <line num="51" type="stmt" count="2"/>
@@ -115,15 +115,15 @@
       <line num="53" type="stmt" count="2"/>
       <line num="54" type="stmt" count="1"/>
       <line num="56" type="stmt" count="1"/>
-      <line num="60" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
-      <line num="62" type="stmt" count="2"/>
-      <line num="69" type="method" name="getCardsAsString" visibility="public" complexity="2" crap="2" count="1"/>
-      <line num="71" type="stmt" count="1"/>
-      <line num="72" type="stmt" count="1"/>
-      <line num="73" type="stmt" count="1"/>
-      <line num="74" type="stmt" count="1"/>
-      <line num="75" type="stmt" count="1"/>
-      <line num="77" type="stmt" count="1"/>
+      <line num="60" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="62" type="stmt" count="3"/>
+      <line num="69" type="method" name="getCardsAsString" visibility="public" complexity="2" crap="2" count="2"/>
+      <line num="71" type="stmt" count="2"/>
+      <line num="72" type="stmt" count="2"/>
+      <line num="73" type="stmt" count="2"/>
+      <line num="74" type="stmt" count="2"/>
+      <line num="75" type="stmt" count="2"/>
+      <line num="77" type="stmt" count="2"/>
       <metrics loc="80" ncloc="51" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="20" coveredelements="20"/>
     </file>
     <file name="/home/axaite/dbwebb-kurser/mvc/me/report/src/Controller/CardGameController.php">
@@ -586,6 +586,6 @@
       </class>
       <metrics loc="12" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="15" loc="1191" ncloc="1085" classes="14" methods="66" coveredmethods="23" conditionals="0" coveredconditionals="0" statements="429" coveredstatements="47" elements="495" coveredelements="70"/>
+    <metrics files="15" loc="1191" ncloc="1085" classes="14" methods="66" coveredmethods="26" conditionals="0" coveredconditionals="0" statements="429" coveredstatements="78" elements="495" coveredelements="104"/>
   </project>
 </coverage>

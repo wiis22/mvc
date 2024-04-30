@@ -12,6 +12,7 @@ class DiceTest extends TestCase
     /**
      * Construct object and verify that the object has the expected
      * properties, use no arguments.
+     * @return void
      */
     public function testCreateDice()
     {
@@ -24,6 +25,7 @@ class DiceTest extends TestCase
 
     /**
      * Roll the dice and assert value is within bounds.
+     * @return void
      */
     public function testRollDice()
     {

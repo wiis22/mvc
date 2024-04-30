@@ -12,20 +12,24 @@ class CardHandTest extends TestCase
     /**
      * Construct object and verify that the object has the expected
      * properties, use no arguments.
+     * @return void
      */
-    public function testCreateCard() {
+    public function testCreateCard()
+    {
         $cardH = new CardHand();
         $this->assertInstanceOf("App\Card\CardHand", $cardH);
 
         $res = $cardH->getCards();
-        $this->assertTrue($res == []);;
+        $this->assertTrue($res == []);
+        ;
     }
 
     /**
      * Test so deal sets the numberOfCards from DeckOFCardsGraphic
      */
-    public function testDeal(): void {
-        $mockDeck= $this->createMock(DeckOfCardsGraphic::class);
+    public function testDeal(): void
+    {
+        $mockDeck = $this->createMock(DeckOfCardsGraphic::class);
 
         $numberOfCards = 3;
 

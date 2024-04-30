@@ -9,12 +9,13 @@ use PHPUnit\Framework\TestCase;
  */
 class DeckOfCardsTest extends TestCase
 {
-
     /**
      * Construct object and verify that the object has the expected
      * properties, use no arguments.
+     * @return void
      */
-    public function testCreateDeck() {
+    public function testCreateDeck()
+    {
         $deck = new DeckOfCards();
         $this->assertInstanceOf("App\Card\DeckOfCards", $deck);
 
@@ -24,8 +25,10 @@ class DeckOfCardsTest extends TestCase
 
     /**
      * Test to shuffle deck.
+     * @return void
      */
-    public function testshuffleDeck() {
+    public function testshuffleDeck()
+    {
         $deck1 = new DeckOfCards();
         $deck2 = new DeckOfCards();
 
@@ -36,8 +39,10 @@ class DeckOfCardsTest extends TestCase
 
     /**
      * Test to dealCard.
+     * @return void
      */
-    public function testDealACard() {
+    public function testDealACard()
+    {
         $deck = new DeckOfCards();
 
         $res = $deck->dealCard();
@@ -47,8 +52,10 @@ class DeckOfCardsTest extends TestCase
 
     /**
      * Test to setCards.
+     * @return void
      */
-    public function testSetCards() {
+    public function testSetCards()
+    {
         $deck = new DeckOfCards();
 
 
@@ -60,8 +67,10 @@ class DeckOfCardsTest extends TestCase
 
     /**
      * Test to getCards.
+     * @return void
      */
-    public function testGetCards() {
+    public function testGetCards()
+    {
         $deck = new DeckOfCards();
 
         $cards = $deck->getCards();
@@ -70,7 +79,4 @@ class DeckOfCardsTest extends TestCase
             $this->assertInstanceOf("App\Card\Card", $card);
         }
     }
-
-
-
 }
