@@ -3,19 +3,19 @@
 {% block title %}Add a book{% endblock %}
 
 {% block body %}
-<h1>Lägg till en bok</h1>
+<h1>Uppdatera boken</h1>
 
-<form method="post" action="{{ path('update_book') }}">
-    <label for="title">Titel:</label><br>
-    <input type="text" id="title" name="title" required><br>
+<form method="post" action="{{ path('update_book', {'id': book.getId }) }}">
+    <label for="title2">Titel:</label><br>
+    <input type="text" id="title2" name="title2" value=" {{ book.getTitel }}"><br>
     <br>
-    <label for="isbn">ISBN:</label><br>
-    <input type="text" id="isbn" name="isbn" required><br>
+    <label for="isbn2">ISBN:</label><br>
+    <input type="text" id="isbn2" name="isbn2" value="{{ book.getISBN }}"><br>
     <br>
-    <label for="author">Författare:</label><br>
-    <input type="text" id="author" name="author" required><br>
+    <label for="author2">Författare:</label><br>
+    <input type="text" id="author2" name="author2" value="{{ book.getAuthor }}"><br>
     <br>
-    <input type="submit" name="draw" value="Lägg till bok">
+    <button type="submit" style="color: #333">Uppdatera
 </form>
 
 {% endblock %}
