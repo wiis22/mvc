@@ -15,6 +15,9 @@
                 {% if pathLink == 'api/deck/draw/{number}' %}
                     <input type="number" name="number" placeholder="Antal kort" required>
                 {% endif %}
+                {% if pathLink == 'api/library/book/{isbn}' %}
+                    <input type="number" name="isbn" placeholder="ISBN nummer" required>
+                {% endif %}
                 <input type="submit" value="{{ info.description }}">
             </form>
         {% endif %}

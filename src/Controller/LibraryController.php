@@ -21,7 +21,7 @@ class LibraryController extends AbstractController
     }
 
     #[Route('/library/create', name: 'add_new_book_form')]
-    public function create( LibraryRepository $libraryRepository ): Response
+    public function create(): Response
     {
         return $this->render('library/create.html.twig');
     }
