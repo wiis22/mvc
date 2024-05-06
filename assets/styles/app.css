@@ -206,3 +206,9 @@ input {
     display: flex;
     flex-direction: column;
 }
+
+/* ===========================   kmom05    ====================================== */
+
+.books {
+    width: 100px;
+}

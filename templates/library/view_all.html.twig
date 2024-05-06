@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All books{% endblock %}
+
+{% block body %}
+    {# <ul>
+        {% for book in books %}
+            <li>{{ book.getTitel|e }} ({{ book.getISBN|e }}) {{ book.getAuthor|e }} {{ book.getPicture|e }}</li>
+        {% endfor %}
+    </ul> #}
+    <table>
+        <thead>
+            <tr>
+                <th>Titel</th>
+                <th>Författare</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td><a href="{{ path('book', {'id': book.getId}) }}">{{ book.getTitel|e }}</td>
+                    <td>{{ book.getAuthor|e }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

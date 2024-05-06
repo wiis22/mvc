@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A book{% endblock %}
+
+{% block body %}
+    <h2>Bok infromation:</h2>
+    <p><strong>Titel:</strong> {{ book.getTitel|e }}.
+    <p><strong>ISBN:</strong> {{ book.getISBN|e }}.
+    <p><strong>Författare:</strong> {{ book.getAuthor|e }}.
+    <p><strong>Bild på boken:</strong> <br><img src="{{ asset(book.getPicture) }}" alt="Bild på boken" class="books"><br>
+
+
+    <a href="{{ path('update_book_form', {'id': book.getId}) }}">Uppdatera info om denna bok</a><br>
+    <a href="{{ path('show_books') }}">Kolla in alla böcker</a>
+
+{% endblock %}

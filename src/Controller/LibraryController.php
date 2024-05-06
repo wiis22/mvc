@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Attribute\Route;
 class LibraryController extends AbstractController
 {
     #[Route('/library', name: 'app_library')]
-    public function index( LibraryRepository $libraryRepository ): Response
+    public function index(): Response
     {
         return $this->render('library/index.html.twig');
     }
@@ -27,28 +27,100 @@ class LibraryController extends AbstractController
     }
 
     #[Route('/library/add_book', name: 'add_book', methods: ['POST'])]
-    public function addBook( Request $request, LibraryRepository $libraryRepository ): Response
-    {
+    public function addBook(
+        Request $request,
+        ManagerRegistry $doctrine
+    ): Response {
+
+        $entityManager = $doctrine->getManager();
+
+        $bookPaths = array("img/bokbild1.png", "img/bokbild2.png", "img/bokbild3.png");
+
         $title = $request->request->get('title');
         $isbn = $request->request->get('isbn');
         $author = $request->request->get('author');
-        $imgfile = $request->request->get('img');
+        $imgpath = $bookPaths[rand(0,2)];
 
-        var_dump($title);
-        var_dump($isbn);
-        var_dump($author);
-        var_dump($imgfile);
+        $book = new Library();
+        $book->setTitel($title);
+        $book->setISBN($isbn);
+        $book->setAuthor($author);
+        $book->setPicture($imgpath);
+
+        $entityManager->persist($book);
+
+        $entityManager->flush();
 
         $this->addFlash(
             'notice',
             'Boken finns nu i bibloteket!'
         );
-        return $this->render('library/create.html.twig');
-    }
-
-    #[Route('/library', name: 'show_books')]
-    public function showAll( LibraryRepository $libraryRepository ): Response
-    {
         return $this->render('library/index.html.twig');
     }
+
+    #[Route('/library/books', name: 'show_books')]
+    public function showAll( LibraryRepository $libraryRepository ): Response
+    {
+        $books = $libraryRepository
+            ->findAll();
+
+        $data = [
+            'books' => $books
+        ];
+
+        return $this->render('library/view_all.html.twig', $data);
+    }
+
+    #[Route('/library/book/{id}', name: 'book')]
+    public function showId( LibraryRepository $libraryRepository, int $id ): Response
+    {
+        $book = $libraryRepository
+            ->find($id);
+
+        $data = [
+            'book' => $book
+        ];
+
+        return $this->render('library/view_book.html.twig', $data);
+    }
+
+    #[Route('/library/update/{id}', name: 'update_book_form')]
+    public function update( LibraryRepository $libraryRepository, int $id ): Response
+    {
+        return $this->render('library/update.html.twig');
+    }
+
+    #[Route('/library/update_book', name: 'update_book', methods: ['POST'])]
+    public function updateBook(
+        Request $request,
+        ManagerRegistry $doctrine
+    ): Response {
+
+        $entityManager = $doctrine->getManager();
+
+        $bookPaths = array("img/bokbild1.png", "img/bokbild2.png", "img/bokbild3.png");
+
+        $title = $request->request->get('title');
+        $isbn = $request->request->get('isbn');
+        $author = $request->request->get('author');
+        $imgpath = $bookPaths[rand(0,2)];
+
+        $book = new Library();
+        $book->setTitel($title);
+        $book->setISBN($isbn);
+        $book->setAuthor($author);
+        $book->setPicture($imgpath);
+
+        $entityManager->persist($book);
+
+        $entityManager->flush();
+
+        $this->addFlash(
+            'notice',
+            'Boken finns nu i bibloteket!'
+        );
+        return $this->render('library/index.html.twig');
+    }
+
+
 }
