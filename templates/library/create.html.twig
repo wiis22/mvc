@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add a book{% endblock %}
+
+{% block body %}
+<h1>Lägg till en bok</h1>
+
+<form method="post" action="{{ path('add_book') }}">
+    <label for="title">Titel:</label><br>
+    <input type="text" id="title" name="title" required><br>
+    <br>
+    <label for="isbn">ISBN:</label><br>
+    <input type="text" id="isbn" name="isbn" required><br>
+    <br>
+    <label for="author">Författare:</label><br>
+    <input type="text" id="author" name="author" required><br>
+    <br>
+    <label for="img">Bild:</label><br>
+    <input type="file" id="input_img" name="img" placeholder="Ingen bild vald"><br>
+    <br>
+    <input type="submit" name="draw" value="Lägg till bok">
+</form>
+
+{% endblock %}

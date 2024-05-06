@@ -9,12 +9,13 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
+    <h1>Halli hallå! Välkommen till detta biblotek</h1>
+    {{ include('pig/flash.html.twig') }}
+    Vad vill du göra i detta biblitek?
     <ul>
-        <li>Your controller at <code style="color: #333">/home/axaite/dbwebb-kurser/mvc/me/report/src/Controller/LibraryController.php</code></li>
-        <li>Your template at <code style="color: #333">/home/axaite/dbwebb-kurser/mvc/me/report/templates/library/index.html.twig</code></li>
+        <a href="{{ path('add_new_book_form') }}">Lägg till en ny bok</a>
+        <a href="{{ path('show_books') }}">Kolla in alla böcker</a>
     </ul>
+
 </div>
 {% endblock %}

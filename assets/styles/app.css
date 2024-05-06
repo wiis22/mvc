@@ -137,6 +137,10 @@ footer {
     font-size: 2em;
 } */
 
+#input_img {
+    color: #fff;
+}
+
 input {
     font-size: 1em;
     color: #333;
