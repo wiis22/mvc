@@ -21,7 +21,9 @@ class Player extends CardHand
     /**
      * @return int total value of hand
      */
-
+    /**
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     */
     public function getPPoints(): int
     {
         $cards = $this->getCards();

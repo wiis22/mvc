@@ -19,15 +19,15 @@ class LibraryRepository extends ServiceEntityRepository
 
     /**
      * Find all producs having a value above the specified one with SQL.
-     * 
+     *
      * @return [][] Returns an array of arrays (i.e. a raw data set)
      */
-    public function findByISBN($ISBN): array
+    public function findByisbn($isbn): array
     {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.ISBN = :ISBN')
-            ->setParameter('ISBN', $ISBN)
-            ->orderBy('p.ISBN', 'ASC')
+            ->andWhere('p.isbn = :isbn')
+            ->setParameter('isbn', $isbn)
+            ->orderBy('p.isbn', 'ASC')
             ->getQuery()
             ->getResult()
         ;

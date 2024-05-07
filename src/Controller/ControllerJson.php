@@ -89,7 +89,7 @@ class ControllerJson extends AbstractController
     }
 
     #[Route("/api/library/books", name: "all_books")]
-    public function allBooks( LibraryRepository $libraryRepository ): Response
+    public function allBooks(LibraryRepository $libraryRepository): Response
     {
 
         $books = $libraryRepository
@@ -103,12 +103,12 @@ class ControllerJson extends AbstractController
     }
 
     #[Route("/api/library/book/{isbn}", methods: ["POST"])]
-    public function findByIsbn( LibraryRepository $libraryRepository, Request $request): Response
+    public function findBookByIsbn(LibraryRepository $libraryRepository, Request $request): Response
     {
         $isbn = $request->request->getInt('isbn', 0);
 
         $book = $libraryRepository
-            ->findByISBN($isbn);
+            ->findByIsbn($isbn);
 
         $response = $this->json($book);
         $response->setEncodingOptions(

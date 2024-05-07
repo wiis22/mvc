@@ -11,7 +11,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;
 
-
 class LibraryController extends AbstractController
 {
     #[Route('/library', name: 'app_library')]
@@ -39,12 +38,12 @@ class LibraryController extends AbstractController
         $title = $request->request->get('title');
         $isbn = $request->request->get('isbn');
         $author = $request->request->get('author');
-        $imgpath = $bookPaths[rand(0,2)];
+        $imgpath = $bookPaths[rand(0, 2)];
 
         $book = new Library();
-        $book->setTitel($title);
-        $book->setISBN($isbn);
-        $book->setAuthor($author);
+        $book->setTitel("$title");
+        $book->setIsbn("$isbn");
+        $book->setAuthor("$author");
         $book->setPicture($imgpath);
 
         $entityManager->persist($book);
@@ -59,7 +58,7 @@ class LibraryController extends AbstractController
     }
 
     #[Route('/library/books', name: 'show_books')]
-    public function showAll( LibraryRepository $libraryRepository ): Response
+    public function showAll(LibraryRepository $libraryRepository): Response
     {
         $books = $libraryRepository
             ->findAll();
@@ -72,7 +71,7 @@ class LibraryController extends AbstractController
     }
 
     #[Route('/library/book/{id}', name: 'book')]
-    public function showId( LibraryRepository $libraryRepository, int $id ): Response
+    public function showId(LibraryRepository $libraryRepository, int $id): Response
     {
         $book = $libraryRepository
             ->find($id);
@@ -85,7 +84,7 @@ class LibraryController extends AbstractController
     }
 
     #[Route('/library/update/{id}', name: 'update_book_form')]
-    public function update( LibraryRepository $libraryRepository, int $id ): Response
+    public function update(LibraryRepository $libraryRepository, int $id): Response
     {
         $book = $libraryRepository
         ->find($id);
@@ -116,9 +115,9 @@ class LibraryController extends AbstractController
         $isbn = $request->request->get('isbn2');
         $author = $request->request->get('author2');
 
-        $book->setTitel($title);
-        $book->setISBN($isbn);
-        $book->setAuthor($author);
+        $book->setTitel("$title");
+        $book->setIsbn("$isbn");
+        $book->setAuthor("$author");
 
 
         $entityManager->flush();
