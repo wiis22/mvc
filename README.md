@@ -1,6 +1,13 @@
 #My git repo for MVC
 ======================
 
+[![Build Status](https://scrutinizer-ci.com/g/wiis22/mvc/badges/build.png?b=main)](https://scrutinizer-ci.com/g/wiis22/mvc/build-status/main)
+
+[![Code Coverage](https://scrutinizer-ci.com/g/wiis22/mvc/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/wiis22/mvc/?branch=main)
+
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/wiis22/mvc/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/wiis22/mvc/?branch=main)
+
+
 a ling to github repo:
 https://github.com/wiis22/mvc
 
