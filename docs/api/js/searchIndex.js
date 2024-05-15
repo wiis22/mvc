@@ -23,37 +23,37 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\Card",
             "name": "Card",
-            "summary": "",
+            "summary": "A\u0020class\u0020that\u0020represents\u0020a\u0020playing\u0020card.",
             "url": "classes/App-Card-Card.html"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Card\u0020constructor.",
             "url": "classes/App-Card-Card.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003AgetValue\u0028\u0029",
             "name": "getValue",
-            "summary": "",
+            "summary": "Get\u0020the\u0020value\u0020of\u0020the\u0020card.",
             "url": "classes/App-Card-Card.html#method_getValue"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003AgetSuit\u0028\u0029",
             "name": "getSuit",
-            "summary": "",
+            "summary": "Get\u0020the\u0020suit\u0020of\u0020the\u0020card.",
             "url": "classes/App-Card-Card.html#method_getSuit"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003AsetValue\u0028\u0029",
             "name": "setValue",
-            "summary": "",
+            "summary": "Set\u0020the\u0020value\u0020of\u0020the\u0020card.",
             "url": "classes/App-Card-Card.html#method_setValue"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003AsetSuit\u0028\u0029",
             "name": "setSuit",
-            "summary": "",
+            "summary": "Set\u0020the\u0020suit\u0020of\u0020the\u0020card.",
             "url": "classes/App-Card-Card.html#method_setSuit"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
-            "summary": "",
+            "summary": "Get\u0020a\u0020string\u0020rerpresentation\u0020of\u0020the\u0020card.",
             "url": "classes/App-Card-Card.html#method_getAsString"
         },                {
             "fqsen": "\\App\\Card\\Card\u003A\u003A\u0024value",

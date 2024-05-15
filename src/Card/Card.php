@@ -5,6 +5,7 @@ namespace App\Card;
 /**
  * A class that represents a playing card.
  */
+
 class Card
 {
     /**
@@ -19,7 +20,7 @@ class Card
 
     /**
      * Card constructor.
-     * 
+     *
      * @param string|null $value The value of the card.
      * @param string|null $suit The suit of the card.
      */
@@ -31,7 +32,7 @@ class Card
 
     /**
      * Get the value of the card.
-     * 
+     *
      * @return string|null The value of the card.
      */
     public function getValue(): ?string
@@ -41,7 +42,7 @@ class Card
 
     /**
      * Get the suit of the card.
-     * 
+     *
      * @return string|null The suit of the card.
      */
     public function getSuit(): ?string
@@ -51,8 +52,8 @@ class Card
 
     /**
      * Set the value of the card.
-     * 
-     * @param string|null The value of the card.
+     *
+     * @param string|null $value The value of the card.
      */
     public function setValue(?string $value): void
     {
@@ -61,8 +62,8 @@ class Card
 
     /**
      * Set the suit of the card.
-     * 
-     * @param string|null The suit of the card.
+     *
+     * @param string|null $suit The suit of the card.
      */
     public function setSuit(?string $suit): void
     {
@@ -71,7 +72,7 @@ class Card
 
     /**
      * Get a string rerpresentation of the card.
-     * 
+     *
      * @return string The string rep of the card.
      */
     public function getAsString(): string
