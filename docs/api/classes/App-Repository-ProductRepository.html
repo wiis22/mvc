@@ -112,15 +112,15 @@
                                 <section>
                                         <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/app.html">App</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-agame21.html">AGame21</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-repository.html">Repository</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    Player
+    ProductRepository
 
         <span class="phpdocumentor-element__extends">
-        extends <a href="classes/App-Card-CardHand.html"><abbr title="\App\Card\CardHand">CardHand</abbr></a>
+        extends <abbr title="\Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository">ServiceEntityRepository</abbr>
     </span>
     
             <div class="phpdocumentor-element__package">
@@ -139,21 +139,37 @@
 </div>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AGame21/Player.php"><a href="files/src-agame21-player.html"><abbr title="src/AGame21/Player.php">Player.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/ProductRepository.php"><a href="files/src-repository-productrepository.html"><abbr title="src/Repository/ProductRepository.php">ProductRepository.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">8</span>
+    <span class="phpdocumentor-element-found-in__line">12</span>
 
     </aside>
 
         
 
 
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/App-Repository-ProductRepository.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">extends</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>ServiceEntityRepository&lt;Product&gt;</p>
+</section>
+
+                                    </dd>
+                                            </dl>
 
 
 
 <h3 id="toc">
     Table of Contents
-    <a href="classes/App-AGame21-Player.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/App-Repository-ProductRepository.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h3>
 
@@ -165,61 +181,32 @@
 
 
 
-<h4 id="toc-properties">
-    Properties
-    <a href="classes/App-AGame21-Player.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
-
-</h4>
-<dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/App-Card-CardHand.html#property_cards">$cards</a>
-    <span>
-                        &nbsp;: array&lt;string|int, <a href="classes/App-Card-Card.html"><abbr title="\App\Card\Card">Card</abbr></a>|null&gt;            </span>
-</dt>
-
-    </dl>
 
 <h4 id="toc-methods">
     Methods
-    <a href="classes/App-AGame21-Player.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/App-Repository-ProductRepository.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Card-CardHand.html#method___construct">__construct()</a>
+    <a href="classes/App-Repository-ProductRepository.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Card-CardHand.html#method_deal">deal()</a>
+    <a href="classes/App-Repository-ProductRepository.html#method_findByMinimumValue">findByMinimumValue()</a>
     <span>
-                                &nbsp;: void    </span>
+                                &nbsp;: array&lt;string|int, <a href="classes/App-Entity-Product.html"><abbr title="\App\Entity\Product">Product</abbr></a>&gt;    </span>
 </dt>
+<dd>Find all producs having a value above the specified one.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Card-CardHand.html#method_getCards">getCards()</a>
+    <a href="classes/App-Repository-ProductRepository.html#method_findByMinimumValue2">findByMinimumValue2()</a>
     <span>
-                                &nbsp;: array&lt;string|int, <a href="classes/App-Card-Card.html"><abbr title="\App\Card\Card">Card</abbr></a>|null&gt;    </span>
+                                &nbsp;: array&lt;string|int, array&lt;string|int, array&lt;string|int, mixed&gt;&gt;&gt;    </span>
 </dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-AGame21-Player.html#method_getPCardsAsString">getPCardsAsString()</a>
-    <span>
-                                &nbsp;: array&lt;string|int, string&gt;    </span>
-</dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-AGame21-Player.html#method_getPPoints">getPPoints()</a>
-    <span>
-                                &nbsp;: int    </span>
-</dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-AGame21-Player.html#method_setCards">setCards()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
+<dd>Find all producs having a value above the specified one with SQL.</dd>
 
     </dl>
 
@@ -229,51 +216,11 @@
         
 
         
-    <section class="phpdocumentor-properties">
-        <h3 class="phpdocumentor-elements__header" id="properties">
-            Properties
-            <a href="classes/App-AGame21-Player.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
-
-        </h3>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_cards">
-        $cards
-        <a href="classes/App-Card-CardHand.html#property_cards" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/CardHand.php"><a href="files/src-card-cardhand.html"><abbr title="src/Card/CardHand.php">CardHand.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">10</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, <a href="classes/App-Card-Card.html"><abbr title="\App\Card\Card">Card</abbr></a>|null&gt;</span>
-    <span class="phpdocumentor-signature__name">$cards</span>
-    </code>
-
-    
-    
-    
-
-</article>
-            </section>
 
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/App-AGame21-Player.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/App-Repository-ProductRepository.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -284,51 +231,20 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/App-Card-CardHand.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Repository-ProductRepository.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/CardHand.php"><a href="files/src-card-cardhand.html"><abbr title="src/Card/CardHand.php">CardHand.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/ProductRepository.php"><a href="files/src-repository-productrepository.html"><abbr title="src/Repository/ProductRepository.php">ProductRepository.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_deal">
-        deal()
-        <a href="classes/App-Card-CardHand.html#method_deal" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/CardHand.php"><a href="files/src-card-cardhand.html"><abbr title="src/Card/CardHand.php">CardHand.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">17</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">deal</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$numberOfCards</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Card-DeckOfCardsGraphic.html"><abbr title="\App\Card\DeckOfCardsGraphic">DeckOfCardsGraphic</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deck</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Doctrine\Persistence\ManagerRegistry">ManagerRegistry</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$registry</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -336,15 +252,8 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$numberOfCards</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$deck</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Card-DeckOfCardsGraphic.html"><abbr title="\App\Card\DeckOfCardsGraphic">DeckOfCardsGraphic</abbr></a></span>
+                <span class="phpdocumentor-signature__argument__name">$registry</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Doctrine\Persistence\ManagerRegistry">ManagerRegistry</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -361,143 +270,23 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getCards">
-        getCards()
-        <a href="classes/App-Card-CardHand.html#method_getCards" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_findByMinimumValue">
+        findByMinimumValue()
+        <a href="classes/App-Repository-ProductRepository.html#method_findByMinimumValue" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/CardHand.php"><a href="files/src-card-cardhand.html"><abbr title="src/Card/CardHand.php">CardHand.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/ProductRepository.php"><a href="files/src-repository-productrepository.html"><abbr title="src/Repository/ProductRepository.php">ProductRepository.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Find all producs having a value above the specified one.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getCards</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/App-Card-Card.html"><abbr title="\App\Card\Card">Card</abbr></a>|null&gt;</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/App-Card-Card.html"><abbr title="\App\Card\Card">Card</abbr></a>|null&gt;</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getPCardsAsString">
-        getPCardsAsString()
-        <a href="classes/App-AGame21-Player.html#method_getPCardsAsString" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AGame21/Player.php"><a href="files/src-agame21-player.html"><abbr title="src/AGame21/Player.php">Player.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">13</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getPCardsAsString</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getPPoints">
-        getPPoints()
-        <a href="classes/App-AGame21-Player.html#method_getPPoints" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AGame21/Player.php"><a href="files/src-agame21-player.html"><abbr title="src/AGame21/Player.php">Player.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">27</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getPPoints</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="classes/App-AGame21-Player.html#method_getPPoints#tags" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">SuppressWarnings</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"><p>(PHPMD.CyclomaticComplexity)</p>
-</section>
-
-                                    </dd>
-                                            </dl>
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">int</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_setCards">
-        setCards()
-        <a href="classes/App-AGame21-Player.html#method_setCards" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AGame21/Player.php"><a href="files/src-agame21-player.html"><abbr title="src/AGame21/Player.php">Player.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">72</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setCards</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/App-Card-Card.html"><abbr title="\App\Card\Card">Card</abbr></a>|null&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cards</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">findByMinimumValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/App-Entity-Product.html"><abbr title="\App\Entity\Product">Product</abbr></a>&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -505,19 +294,75 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$cards</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, <a href="classes/App-Card-Card.html"><abbr title="\App\Card\Card">Card</abbr></a>|null&gt;</span>
+                <span class="phpdocumentor-signature__argument__name">$value</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>an array of cards</p>
-</section>
-
+                
             </dd>
             </dl>
 
     
 
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/App-Entity-Product.html"><abbr title="\App\Entity\Product">Product</abbr></a>&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns an array of Product objects</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_findByMinimumValue2">
+        findByMinimumValue2()
+        <a href="classes/App-Repository-ProductRepository.html#method_findByMinimumValue2" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/ProductRepository.php"><a href="files/src-repository-productrepository.html"><abbr title="src/Repository/ProductRepository.php">ProductRepository.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">40</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Find all producs having a value above the specified one with SQL.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">findByMinimumValue2</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, array&lt;string|int, mixed&gt;&gt;&gt;</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
     
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$value</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, array&lt;string|int, array&lt;string|int, mixed&gt;&gt;&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns an array of arrays (i.e. a raw data set)</p>
+</section>
+
+            </section>
+
 </article>
             </section>
 
@@ -525,7 +370,7 @@
     <div class="phpdocumentor-modal-bg" data-exit-button></div>
     <div class="phpdocumentor-modal-container">
         <div class="phpdocumentor-modal-content">
-            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/AGame21/Player.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Repository/ProductRepository.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
         </div>
         <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
     </div>
@@ -624,27 +469,17 @@
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                                            <li><a href="classes/App-AGame21-Player.html#toc-properties">Properties</a></li>
-                                                            <li><a href="classes/App-AGame21-Player.html#toc-methods">Methods</a></li>
+                                                                                <li><a href="classes/App-Repository-ProductRepository.html#toc-methods">Methods</a></li>
                                     </ul>
             </li>
             
-                            <li class="phpdocumentor-on-this-page-section__title">Properties</li>
-                <li>
-                    <ul class="phpdocumentor-list -clean">
-                                                    <li><a href="classes/App-Card-CardHand.html#property_cards">$cards<a href="classes/App-AGame21-Player.html"></li>
-                                            </ul>
-                </li>
             
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                            <li><a href="classes/App-Card-CardHand.html#method___construct">__construct()</a></li>
-                                            <li><a href="classes/App-Card-CardHand.html#method_deal">deal()</a></li>
-                                            <li><a href="classes/App-Card-CardHand.html#method_getCards">getCards()</a></li>
-                                            <li><a href="classes/App-AGame21-Player.html#method_getPCardsAsString">getPCardsAsString()</a></li>
-                                            <li><a href="classes/App-AGame21-Player.html#method_getPPoints">getPPoints()</a></li>
-                                            <li><a href="classes/App-AGame21-Player.html#method_setCards">setCards()</a></li>
+                                            <li><a href="classes/App-Repository-ProductRepository.html#method___construct">__construct()</a></li>
+                                            <li><a href="classes/App-Repository-ProductRepository.html#method_findByMinimumValue">findByMinimumValue()</a></li>
+                                            <li><a href="classes/App-Repository-ProductRepository.html#method_findByMinimumValue2">findByMinimumValue2()</a></li>
                                     </ul>
             </li>
                     </ul>
@@ -664,7 +499,7 @@
     </section>
 </section>
         </div>
-        <a href="classes/App-AGame21-Player.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/App-Repository-ProductRepository.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

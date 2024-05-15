@@ -29,33 +29,33 @@ class Player extends CardHand
         $cards = $this->getCards();
         $tot = 0;
         $aceC = 0;
-        if($cards !== null) {
-            foreach ($cards as $card) {
-                if ($card !== null) {
-                    $value = $card->getValue();
+        // if($cards !== null) {
+        foreach ($cards as $card) {
+            if ($card !== null) {
+                $value = $card->getValue();
 
-                    switch ($value) {
-                        case 'A':
-                            $aceC++;
-                            $tot += 1;
-                            break;
-                        case 'K':
-                            $tot += 13;
-                            break;
-                        case 'Q':
-                            $tot += 12;
-                            break;
-                        case 'J':
-                            $tot += 11;
-                            break;
+                switch ($value) {
+                    case 'A':
+                        $aceC++;
+                        $tot += 1;
+                        break;
+                    case 'K':
+                        $tot += 13;
+                        break;
+                    case 'Q':
+                        $tot += 12;
+                        break;
+                    case 'J':
+                        $tot += 11;
+                        break;
 
-                        default:
-                            $tot += (int) $value;
-                            break;
-                    }
+                    default:
+                        $tot += (int) $value;
+                        break;
                 }
             }
         }
+        // }
 
         for ($i = 0; $i < $aceC; $i++) {
             if ($tot + 13 <= 21) {

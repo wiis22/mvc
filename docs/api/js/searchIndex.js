@@ -301,6 +301,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-ControllerTwig.html#method_number"
         },                {
+            "fqsen": "\\App\\Controller\\ControllerTwig\u003A\u003Ametrics\u0028\u0029",
+            "name": "metrics",
+            "summary": "",
+            "url": "classes/App-Controller-ControllerTwig.html#method_metrics"
+        },                {
             "fqsen": "\\App\\Controller\\DiceGameController",
             "name": "DiceGameController",
             "summary": "",
@@ -686,6 +691,41 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Kernel.html"
         },                {
+            "fqsen": "\\App\\Repository\\LibraryRepository",
+            "name": "LibraryRepository",
+            "summary": "",
+            "url": "classes/App-Repository-LibraryRepository.html"
+        },                {
+            "fqsen": "\\App\\Repository\\LibraryRepository\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Repository-LibraryRepository.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Repository\\LibraryRepository\u003A\u003AfindByisbn\u0028\u0029",
+            "name": "findByisbn",
+            "summary": "Find\u0020all\u0020producs\u0020having\u0020a\u0020value\u0020above\u0020the\u0020specified\u0020one\u0020with\u0020SQL.",
+            "url": "classes/App-Repository-LibraryRepository.html#method_findByisbn"
+        },                {
+            "fqsen": "\\App\\Repository\\ProductRepository",
+            "name": "ProductRepository",
+            "summary": "",
+            "url": "classes/App-Repository-ProductRepository.html"
+        },                {
+            "fqsen": "\\App\\Repository\\ProductRepository\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Repository-ProductRepository.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Repository\\ProductRepository\u003A\u003AfindByMinimumValue\u0028\u0029",
+            "name": "findByMinimumValue",
+            "summary": "Find\u0020all\u0020producs\u0020having\u0020a\u0020value\u0020above\u0020the\u0020specified\u0020one.",
+            "url": "classes/App-Repository-ProductRepository.html#method_findByMinimumValue"
+        },                {
+            "fqsen": "\\App\\Repository\\ProductRepository\u003A\u003AfindByMinimumValue2\u0028\u0029",
+            "name": "findByMinimumValue2",
+            "summary": "Find\u0020all\u0020producs\u0020having\u0020a\u0020value\u0020above\u0020the\u0020specified\u0020one\u0020with\u0020SQL.",
+            "url": "classes/App-Repository-ProductRepository.html#method_findByMinimumValue2"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -720,5 +760,10 @@ Search.appendIndex(
             "name": "App",
             "summary": "",
             "url": "namespaces/app.html"
+        },                {
+            "fqsen": "\\App\\Repository",
+            "name": "Repository",
+            "summary": "",
+            "url": "namespaces/app-repository.html"
         }            ]
 );
