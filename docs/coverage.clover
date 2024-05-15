@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1715788667">
-  <project timestamp="1715788667">
+<coverage generated="1715791947">
+  <project timestamp="1715791947">
     <file name="/home/axaite/dbwebb-kurser/mvc/me/report/src/AGame21/Player.php">
       <class name="App\AGame21\Player" namespace="global">
         <metrics complexity="12" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="30" coveredstatements="30" elements="33" coveredelements="33"/>
