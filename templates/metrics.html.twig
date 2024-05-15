@@ -1,0 +1,51 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Metric analys{% endblock %}
+
+{% block body %}
+    <h1>Introduktion</h1>
+    <p>De sex C:na och vad de betyder och hur de kan påverka ens kod till att bli bättre.</p>
+    <strong>Codestyle:</strong>
+    <p>Menar på att man skriver och formaterar koden på liknande sätt så att det blir enklare att läsa, förstå och sedan uderhålla.</p>
+    <strong>Coverage:</strong>
+    <p>Är ett sätt att mäta hur mycket av koden som blir testad. Om man har en hög Coverage så minskar det risken att man stöter på en bug i koden.</p>
+    <strong>Complexity:</strong>
+    <p>Kan anvisa på hur komplex koden anses vara där den inkluderar hur mycket logik det finns i de olika delarna i koden. Där den t.ex. kollar på hur många nåvåer koden har. Där en låg Complexity anspelar på att koden blir lättare att läsa, förstå och underhålla. </p>
+    <strong>Cohesion:</strong>
+    <p>Visar hur bra en klass eller modul är att utföra ett enda syfte eller en ansvarsuppgift. Där en håg Cohesion betyder att klassen eller modulen är bra på att utföra en specisik uppgift, Vilket i sin tur kan tillåta enklare kod återanvändning.</p>
+    <strong>Coupling:</strong>
+    <p>Indikerar självständighets nivån mellan olika klasser och muduler i ett system. T.ex. ett litet vädre innebär att en modul inte har något/några beroende av andra moduler. Vilket gör att modulen är lättare att underhålla.</p>
+    <strong>CRAP:</strong>
+    <p>Är ett värde på kodens kvalitet, där de tar hänsyn till komplexiteten och täcknignen av tester. Om CRAP värder är högt på en metod så är risken större att något fel kan uppstå. </p>
+
+    <h1>Phpmetrics</h1>
+    <p>Det som jag främst tar från PhpMetrics rapport är att jag skulle behöva öka min maintainability på vissa av mina klasser/modluer där jag har missat att skriva komentarer för att enklare kunna förstå del av koden.</p>
+    <p>Det är tydligt då om man kollar in på vad som finns med i raporten på classrank så finner man en tydlig analys om maintainability med och utan kommentarer. Där den högra är utan kommentarer och vänstra med.</p>
+    <p>Sedan om man kollar in på maintainability / complexity så kan man se att de 4 moduler som har ströst värde där är 3 Controllers och sedan Player klassen. Där de alla skulle behöva kollas över och se om jag skulle kunna sänka komplexiteten samt skirva mer kommentarer så att de blir enklare att underhålla koden.</p>
+
+    <img src="{{ asset('img/Phpmetrics1.png') }}" alt="PhpMetrics analys maintainability">
+
+    <p>Sedan om man kolla in på vilka violations som jag fick med koden så kan vi se att jag borde lägga till test cases på vissa av mina controllers</p>
+    <p>Sen så bör jag antingen ta bort ProductControllen från controllers eller så bör jag bara lägga till den så att den excluderas från raporten då den inte används.</p>
+    <p>Under package violations så varnar de att de olika modulerna är instabila och abstracta vilket de inte bör vara. </p>
+
+    <img src="{{ asset('img/Phpmetrics2.png') }}" alt="PhpMetrics analys violations">
+
+    <h1>Scrutinizer</h1>
+    <p>I det stora hela så verkar scrutinizer vara nöjd med koden lite dålig coverage men det är förväntat.<p>
+    <p>Men kollar man im på issues så finns det några saker som kan förbättras. Som i Player finns det en sats somm alltid är true vilket gör den onödig att ha med. Sedan så värkar det var lite logik som bör kollas över i ControllerjsonDeck.<p>
+    <p>Kollar man in CRAP Score så ser man att det är controllerna som ligger höst upp och den klass som skulle behöva bli bättre är players getPPoints som har CRAP score på 10 men ändå har en coverage på 100%.
+    <div class="scrutinizer">
+        <img src="{{ asset('img/Scrutinizer1.png') }}" alt="Scrutinizer score" style="width:auto">
+        <img src="{{ asset('img/Scrutinizer2.png') }}" alt="Scrutinizer issues" style="width:auto">
+        <div class="rigth_column">
+            <a href="https://scrutinizer-ci.com/g/wiis22/mvc/?branch=main"><img src="https://scrutinizer-ci.com/g/wiis22/mvc/badges/quality-score.png?b=main" alt="pick på scrutinizer score"></a>
+            <a href="https://scrutinizer-ci.com/g/wiis22/mvc/?branch=main"><img src="https://scrutinizer-ci.com/g/wiis22/mvc/badges/coverage.png?b=main" alt="pick på scrutinizer coverage"></a>
+            <a href="https://scrutinizer-ci.com/g/wiis22/mvc/?branch=main"><img src="https://scrutinizer-ci.com/g/wiis22/mvc/badges/build.png?b=main" alt="pick på scrutinizer build"></a>
+        </div>
+    </div>
+
+    <h1>Förbättringar</h1>
+    <p>De första förbättrningarna jag skulle göra är att fixa till de issues som Scrutinizer hittade, sen skulle jag försöka öka maintainability på vissa av klasserna som var lite mer utsatta i Phpmetrics raporten.</p>
+    <p>Sedan ska jag försöka få ner komplexiteten på player's getPPoints sen tänker jag försöka få upp min raiting till 10 eller så nära som jag kan på scrutinizer. Det skulle jag göra genom att öka min kodtäckning till mina controller klasser.</p>
+{% endblock %}

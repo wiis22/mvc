@@ -212,3 +212,11 @@ input {
 .books {
     width: 100px;
 }
+
+
+.scrutinizer {
+    height: 15rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
