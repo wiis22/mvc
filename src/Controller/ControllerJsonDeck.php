@@ -69,15 +69,17 @@ class ControllerJsonDeck extends AbstractController
     {
         $deckData = $session->get("theDeck");
 
-        if ($deckData instanceof DeckOfCards) {
-            $deck = $deckData;
-        }
+        // if ($deckData instanceof DeckOfCards) {
+        //     $deck = $deckData;
+        // } else {
+        //     $deck = new DeckOfCards();
+        //     $deck->setCards($deckData);
+        // }
 
+        $deck = ($deckData instanceof DeckOfCards) ? $deckData : new DeckOfCards();
         if (!($deckData instanceof DeckOfCards)) {
-            $deck = new DeckOfCards();
             $deck->setCards($deckData);
         }
-
         $card = $deck->dealCard();
 
         $remainingCards = count($deck->getCardsAsString());
@@ -111,12 +113,17 @@ class ControllerJsonDeck extends AbstractController
 
         $deckData = $session->get("theDeck");
 
-        if ($deckData instanceof DeckOfCards) {
-            $deck = $deckData;
-        }
+        // if ($deckData instanceof DeckOfCards) {
+        //     $deck = $deckData;
+        // }
 
+        // if (!($deckData instanceof DeckOfCards)) {
+        //     $deck = new DeckOfCards();
+        //     $deck->setCards($deckData);
+        // }
+
+        $deck = ($deckData instanceof DeckOfCards) ? $deckData : new DeckOfCards();
         if (!($deckData instanceof DeckOfCards)) {
-            $deck = new DeckOfCards();
             $deck->setCards($deckData);
         }
 
