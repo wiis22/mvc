@@ -32,31 +32,50 @@ class Player extends CardHand
         $tot = 0;
         $aceC = 0;
 
+        //Mapping the card values.
+        $valueMap = [
+            'A' => 1,
+            'K' => 13,
+            'Q' => 12,
+            'J' => 11
+        ];
+
+
         //Check each card in hand to se tot value.
         foreach ($cards as $card) {
             if ($card !== null) {
                 $value = $card->getValue();
 
-                //Check what value a card gives.
-                switch ($value) {
-                    case 'A':
-                        $aceC++;
-                        $tot += 1;
-                        break;
-                    case 'K':
-                        $tot += 13;
-                        break;
-                    case 'Q':
-                        $tot += 12;
-                        break;
-                    case 'J':
-                        $tot += 11;
-                        break;
+                //Using the map to get the card values.
+                $cardValue = $valueMap[$value] ?? (int)$value;
 
-                    default:
-                        $tot += (int) $value;
-                        break;
+                if($value === 'A') {
+                    $aceC++;
                 }
+
+                $tot += $cardValue;
+
+
+                // //Check what value a card gives.
+                // switch ($value) {
+                //     case 'A':
+                //         $aceC++;
+                //         $tot += 1;
+                //         break;
+                //     case 'K':
+                //         $tot += 13;
+                //         break;
+                //     case 'Q':
+                //         $tot += 12;
+                //         break;
+                //     case 'J':
+                //         $tot += 11;
+                //         break;
+
+                //     default:
+                //         $tot += (int) $value;
+                //         break;
+                // }
             }
         }
 
