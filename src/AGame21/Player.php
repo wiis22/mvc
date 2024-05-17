@@ -19,6 +19,8 @@ class Player extends CardHand
     }
 
     /**
+     * Gets the total points in hand.
+     *
      * @return int total value of hand
      */
     /**
@@ -29,11 +31,13 @@ class Player extends CardHand
         $cards = $this->getCards();
         $tot = 0;
         $aceC = 0;
-        // if($cards !== null) {
+
+        //Check each card in hand to se tot value.
         foreach ($cards as $card) {
             if ($card !== null) {
                 $value = $card->getValue();
 
+                //Check what value a card gives.
                 switch ($value) {
                     case 'A':
                         $aceC++;
@@ -55,12 +59,12 @@ class Player extends CardHand
                 }
             }
         }
-        // }
 
-        for ($i = 0; $i < $aceC; $i++) {
-            if ($tot + 13 <= 21) {
-                $tot += 13;
-            }
+
+        //Check if we got an Ace and if we can add 13 without going bust.
+        while ($aceC > 0 && $tot + 13 <= 21) {
+            $tot += 13;
+            $aceC--;
         }
 
         return $tot;
