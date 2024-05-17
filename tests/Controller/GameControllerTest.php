@@ -1,14 +1,11 @@
 <?php
 
-namespace App\tests\Controller;
+namespace App\Controller;
 
 // use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use App\Card\Card;
-use App\Card\CardHand;
 use App\Card\DeckOfCardsGraphic;
-use App\Card\DeckOfCards;
 use App\AGame21\Player;
 
 class GameControllerTest extends WebTestCase
