@@ -50,4 +50,9 @@
 
     <h1 id="kmom06">Kmom06</h1>
 
+    <p>Jag tycker att verktyget Phpmetrics var i helhet bra på att få en övergripande bild av de olika klasserna. Jag tyckte det bästa med infon som man fick utav dem fanns med i deras overview, där man både fick en bra bild och info från Maintainability / complexity kolumn. Sen ClassRank kolumn fick man en bra uppsyn om vart maintain abilityn ligger i rank med viktigaste klassen.</p>
+    <p>Det gick väldigt smidigt att sätta upp scrutinizer tar bara lite tid i början men blev en god kaffepaus. Sen när jag fick mitt första betyg så fick jag 9.85 med en coverage på 14% och att build hade blivit godkänd. Så visste inte direkt vart jag skulle försöka lägga fokus men sen såg jag att jag hade lite problem att ta tag i. Jag gjorde dem som jag kände att jag hade koll på, men den klagar på Kernel.php och .php-cs-fixer.dist.php men annars så gick det bra tills jag försökte lägga till tester till GameController och få upp dem till scrutinizer, men då klarade den inte av att bygga koden. Det jag förstod var att det scrutinizer failade med sin composer phpunit. Men fick upp till 9.9 och kände att jag inte kunde förbättra de tre andra kontrollerna som hade betyg B.</p>
+    <p>På sätt och vis kan man få en överblick med bages men ibland känns det lite överdrivet. Jag tycker att det är bra om man försöker hålla sig till en standard när man kodar. Då tror jag att om man gör vissa småsaker. Såsom att dokumentera sin kod i vissa mån och försöka skriva icke komplex kod, kommer att hjälpa till att göra så att koden blir enklare att underhålla.</p>
+    <p>TIL för detta kmom blir att jag ska försöka kontinuerligt göra koden mindre komplex och lämna hjälpande kommentarer.</p>
+
 {% endblock %}

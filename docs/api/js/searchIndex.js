@@ -378,7 +378,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003Astop\u0028\u0029",
             "name": "stop",
-            "summary": "Stop\u0020the\u0020gmae\u0020and\u0020let\u0020the\u0020bank\u0020play.",
+            "summary": "Stop\u0020the\u0020game\u0020and\u0020let\u0020the\u0020bank\u0020play.",
             "url": "classes/App-Controller-GameController.html#method_stop"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003Adoc\u0028\u0029",

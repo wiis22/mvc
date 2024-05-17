@@ -105,7 +105,7 @@ class GameController extends AbstractController
     }
 
     /**
-     * Stop the gmae and let the bank play.
+     * Stop the game and let the bank play.
      *
      * @param SessionInterface $session The session interface to store game data.
      * @return Response

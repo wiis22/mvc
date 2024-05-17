@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="18" assertions="90" errors="0" warnings="0" failures="0" skipped="0" time="0.035765">
-    <testsuite name="Project Test Suite" tests="18" assertions="90" errors="0" warnings="0" failures="0" skipped="0" time="0.035765">
-      <testsuite name="App\AGame21\PlayerTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/AGame21/PlayerTest.php" tests="2" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.011924">
-        <testcase name="testGetPCards" class="App\AGame21\PlayerTest" classname="App.AGame21.PlayerTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/AGame21/PlayerTest.php" line="19" assertions="1" time="0.011066"/>
-        <testcase name="testGetPoints" class="App\AGame21\PlayerTest" classname="App.AGame21.PlayerTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/AGame21/PlayerTest.php" line="32" assertions="3" time="0.000858"/>
+  <testsuite name="" tests="18" assertions="90" errors="0" warnings="0" failures="0" skipped="0" time="0.041255">
+    <testsuite name="Project Test Suite" tests="18" assertions="90" errors="0" warnings="0" failures="0" skipped="0" time="0.041255">
+      <testsuite name="App\AGame21\PlayerTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/AGame21/PlayerTest.php" tests="2" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.008184">
+        <testcase name="testGetPCards" class="App\AGame21\PlayerTest" classname="App.AGame21.PlayerTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/AGame21/PlayerTest.php" line="19" assertions="1" time="0.007351"/>
+        <testcase name="testGetPoints" class="App\AGame21\PlayerTest" classname="App.AGame21.PlayerTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/AGame21/PlayerTest.php" line="32" assertions="3" time="0.000833"/>
       </testsuite>
-      <testsuite name="App\Card\CardHandTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" tests="2" assertions="7" errors="0" warnings="0" failures="0" skipped="0" time="0.016084">
-        <testcase name="testCreateCard" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="17" assertions="2" time="0.000906"/>
-        <testcase name="testDeal" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="30" assertions="5" time="0.015177"/>
+      <testsuite name="App\Card\CardHandTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" tests="2" assertions="7" errors="0" warnings="0" failures="0" skipped="0" time="0.019845">
+        <testcase name="testCreateCard" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="17" assertions="2" time="0.000914"/>
+        <testcase name="testDeal" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="30" assertions="5" time="0.018931"/>
       </testsuite>
-      <testsuite name="App\Card\CardTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" tests="5" assertions="11" errors="0" warnings="0" failures="0" skipped="0" time="0.002721">
-        <testcase name="testCreateCard" class="App\Card\CardTest" classname="App.Card.CardTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="17" assertions="2" time="0.001611"/>
-        <testcase name="testCreateCardWithValue" class="App\Card\CardTest" classname="App.Card.CardTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="30" assertions="2" time="0.000294"/>
-        <testcase name="testCreateCardWithSuit" class="App\Card\CardTest" classname="App.Card.CardTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="43" assertions="3" time="0.000276"/>
-        <testcase name="testCardSetSuit" class="App\Card\CardTest" classname="App.Card.CardTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="58" assertions="2" time="0.000266"/>
-        <testcase name="testCardSetValue" class="App\Card\CardTest" classname="App.Card.CardTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="72" assertions="2" time="0.000273"/>
+      <testsuite name="App\Card\CardTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" tests="5" assertions="11" errors="0" warnings="0" failures="0" skipped="0" time="0.004716">
+        <testcase name="testCreateCard" class="App\Card\CardTest" classname="App.Card.CardTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="17" assertions="2" time="0.003471"/>
+        <testcase name="testCreateCardWithValue" class="App\Card\CardTest" classname="App.Card.CardTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="30" assertions="2" time="0.000279"/>
+        <testcase name="testCreateCardWithSuit" class="App\Card\CardTest" classname="App.Card.CardTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="43" assertions="3" time="0.000396"/>
+        <testcase name="testCardSetSuit" class="App\Card\CardTest" classname="App.Card.CardTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="58" assertions="2" time="0.000291"/>
+        <testcase name="testCardSetValue" class="App\Card\CardTest" classname="App.Card.CardTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="72" assertions="2" time="0.000279"/>
       </testsuite>
-      <testsuite name="App\Card\DeckOfCardsGraphicTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsGraphicTest.php" tests="2" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.000864">
-        <testcase name="testCreateGraphicDeck" class="App\Card\DeckOfCardsGraphicTest" classname="App.Card.DeckOfCardsGraphicTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsGraphicTest.php" line="17" assertions="2" time="0.000539"/>
-        <testcase name="testGetCardGraphic" class="App\Card\DeckOfCardsGraphicTest" classname="App.Card.DeckOfCardsGraphicTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsGraphicTest.php" line="31" assertions="1" time="0.000325"/>
+      <testsuite name="App\Card\DeckOfCardsGraphicTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsGraphicTest.php" tests="2" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.001496">
+        <testcase name="testCreateGraphicDeck" class="App\Card\DeckOfCardsGraphicTest" classname="App.Card.DeckOfCardsGraphicTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsGraphicTest.php" line="17" assertions="2" time="0.000943"/>
+        <testcase name="testGetCardGraphic" class="App\Card\DeckOfCardsGraphicTest" classname="App.Card.DeckOfCardsGraphicTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsGraphicTest.php" line="31" assertions="1" time="0.000553"/>
       </testsuite>
-      <testsuite name="App\Card\DeckOfCardsTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" tests="5" assertions="60" errors="0" warnings="0" failures="0" skipped="0" time="0.003046">
-        <testcase name="testCreateDeck" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="17" assertions="2" time="0.000442"/>
-        <testcase name="testshuffleDeck" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="30" assertions="2" time="0.000742"/>
-        <testcase name="testDealACard" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="44" assertions="1" time="0.000342"/>
-        <testcase name="testSetCards" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="57" assertions="2" time="0.000346"/>
-        <testcase name="testGetCards" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="72" assertions="53" time="0.001174"/>
+      <testsuite name="App\Card\DeckOfCardsTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" tests="5" assertions="60" errors="0" warnings="0" failures="0" skipped="0" time="0.005595">
+        <testcase name="testCreateDeck" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="17" assertions="2" time="0.000459"/>
+        <testcase name="testshuffleDeck" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="30" assertions="2" time="0.000790"/>
+        <testcase name="testDealACard" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="44" assertions="1" time="0.000403"/>
+        <testcase name="testSetCards" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="57" assertions="2" time="0.000381"/>
+        <testcase name="testGetCards" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="72" assertions="53" time="0.003561"/>
       </testsuite>
-      <testsuite name="App\Dice\DiceTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" tests="2" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.001127">
-        <testcase name="testCreateDice" class="App\Dice\DiceTest" classname="App.Dice.DiceTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" line="17" assertions="2" time="0.000803"/>
-        <testcase name="testRollDice" class="App\Dice\DiceTest" classname="App.Dice.DiceTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" line="30" assertions="3" time="0.000323"/>
+      <testsuite name="App\Dice\DiceTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" tests="2" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.001419">
+        <testcase name="testCreateDice" class="App\Dice\DiceTest" classname="App.Dice.DiceTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" line="17" assertions="2" time="0.000981"/>
+        <testcase name="testRollDice" class="App\Dice\DiceTest" classname="App.Dice.DiceTest" file="/home/axaite/dbwebb-kurser/mvc/me/report/tests/Dice/DiceTest.php" line="30" assertions="3" time="0.000438"/>
       </testsuite>
     </testsuite>
   </testsuite>

@@ -47,5 +47,11 @@
 
     <h1>Förbättringar</h1>
     <p>De första förbättrningarna jag skulle göra är att fixa till de issues som Scrutinizer hittade, sen skulle jag försöka öka maintainability på vissa av klasserna som var lite mer utsatta i Phpmetrics raporten.</p>
-    <p>Sedan ska jag försöka få ner komplexiteten på player's getPPoints sen tänker jag försöka få upp min raiting till 10 eller så nära som jag kan på scrutinizer. Det skulle jag göra genom att öka min kodtäckning till mina controller klasser.</p>
+    <p>Sedan ska jag försöka få ner komplexiteten på player's getPPoints sen tänker jag försöka få upp min raiting till 10 eller så nära som jag kan på scrutinizer. Det skulle jag göra genom att öka min kodtäckning och få ner komplexiteten till mina controller klasser.</p>
+    <p>Etfer jag har implementerat de lite av de ändringar jag tänkte så ser jag lite skillnader båda från PhpMetrics och Scrutinizer. Scrutinizer scoret har gått upp till 9.9, samt att getPPoits() har fått ett nytt crapscore på 6. Sedan om jag kollar in PhpMetrics så ser jag att har fått ner kompleiteten på min player class en hel del samt att många av de röda cirklarna är nu nula eller gröna. När man kollar under ClassRank så kan man se att maintainability har ökat en hel del.<p>
+    <img src="{{ asset('img/Phpmetrics3.png') }}" alt="PhpMetrics analys maintainability">
+
+    <h1>Diskussion</h1>
+    <p>Då jag redan hade fixat en hel del av min kod innan detta kmom så var det inte dunder mycket jag tyckte jag kunde göra för att förbättra koden förutom det jag gjorde. Jag försökte även göra så att jag hade kodtäckning på Gameconmtroller klassen men då började scrutinizer att klaga och inte kunna bygga det även om det funkade lokat.<p>
+    <P>Annars tycker jag att det är bra att man försöker hålla sig till att ha "clean code" så att det blir enklare att underhålla och förstå. Om man håller på med det under tiden man skriver koden så tror jag att man kommer vara i en betyligt mycket bättre possition en att vänta till man är klar med de stora hela och sedan börja. Om man kollar på denna uppgiften så finns det en del kod som är inte i focus och de då förvränger siffror eventulet för så att focus hamnat på fel saker.<p>
 {% endblock %}
