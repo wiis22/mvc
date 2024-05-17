@@ -14,6 +14,12 @@ use App\Card\DeckOfCards;
 
 class ControllerJsonDeck extends AbstractController
 {
+    /**
+     * Create a JSON representation of a deck of cards. And store it in session.
+     *
+     * @param SessionInterface $session The session interface to store deck data.
+     * @return JsonResponse The JSON response containing info that the deck is shuffled and the deck..
+     */
     #[Route("/api/deck", methods: ["GET"])]
     public function jsonApi(SessionInterface $session): Response
     {
@@ -35,6 +41,12 @@ class ControllerJsonDeck extends AbstractController
         return $response;
     }
 
+    /**
+     * Shuffles the deck.
+     *
+     * @param SessionInterface $session The session interface to store deck data.
+     * @return JsonResponse The JSON response containing info that the deck is shuffled and the deck..
+     */
     #[Route("/api/deck/shuffle", methods: ["POST"])]
     public function shuffleDeck(SessionInterface $session): JsonResponse
     {
@@ -64,18 +76,18 @@ class ControllerJsonDeck extends AbstractController
         return  $response;
     }
 
+    /**
+     * Draw a card from the deck.
+     *
+     * @param SessionInterface $session The session interface to store deck data.
+     * @return JsonResponse The JSON response containing info of drawn cards and remaing cards in deck.
+     */
     #[Route("/api/deck/draw", methods: ["POST"])]
     public function drawCards(SessionInterface $session): Response
     {
         $deckData = $session->get("theDeck");
 
-        // if ($deckData instanceof DeckOfCards) {
-        //     $deck = $deckData;
-        // } else {
-        //     $deck = new DeckOfCards();
-        //     $deck->setCards($deckData);
-        // }
-
+        //Ceck if deckData is of DeckOfCards else create a new deck and set that new deck as cards.
         $deck = ($deckData instanceof DeckOfCards) ? $deckData : new DeckOfCards();
         if (!($deckData instanceof DeckOfCards)) {
             $deck->setCards($deckData);
@@ -104,7 +116,13 @@ class ControllerJsonDeck extends AbstractController
         return  $response;
     }
 
-
+    /**
+     * Draw a specific number of cards from the deck.
+     *
+     * @param SessionInterface $session The session interface to store deck data.
+     * @param Request $request the request containing the number of cards to be drawn.
+     * @return JsonResponse The JSON response containing info of drawn cards and remaing cards in deck.
+     */
     #[Route("/api/deck/draw/{number}", methods: ["POST"])]
     public function drawCardsNumber(SessionInterface $session, Request $request): Response
     {
@@ -113,22 +131,16 @@ class ControllerJsonDeck extends AbstractController
 
         $deckData = $session->get("theDeck");
 
-        // if ($deckData instanceof DeckOfCards) {
-        //     $deck = $deckData;
-        // }
-
-        // if (!($deckData instanceof DeckOfCards)) {
-        //     $deck = new DeckOfCards();
-        //     $deck->setCards($deckData);
-        // }
-
+        //Ceck if deckData is of DeckOfCards else create a new deck and set that new deck as cards.
         $deck = ($deckData instanceof DeckOfCards) ? $deckData : new DeckOfCards();
+
+        //set cards for the new deck if deckdata is not of DeckOfCards.
         if (!($deckData instanceof DeckOfCards)) {
             $deck->setCards($deckData);
         }
 
+        //Draw cars from the deck
         $drawnCards = [];
-
         for ($i = 0; $i < (int)$number; $i++) {
             if ($deck instanceof DeckOfCards) {
                 $card = $deck->dealCard();
@@ -138,10 +150,14 @@ class ControllerJsonDeck extends AbstractController
             }
 
         }
+
+        //The remaining number of cards in deck.
         $remainingCards = count($deck->getCardsAsString());
 
+        //Update session with the deck.
         $session->set("theDeck", $deck);
 
+        //Response data
         $data = [
             "drawn_cards" => $drawnCards,
             "remaining_cards" => $remainingCards

@@ -14,6 +14,12 @@ use App\Card\DeckOfCards;
 
 class CardGameController extends AbstractController
 {
+    /**
+     * Display the homepage for the card game.
+     *
+     * @param SessionInterface $session The session interface to store game data.
+     * @return Response
+     */
     #[Route("/game/card", name: "card_start")]
     public function home(SessionInterface $session): Response
     {
@@ -25,6 +31,12 @@ class CardGameController extends AbstractController
         return $this->render('card/home.html.twig');
     }
 
+    /**
+     * Show the curresnt deck of cards.
+     *
+     * @param SessionInterface $session The session interface to get game data.
+     * @return Response
+     */
     #[Route("/game/deck", name: "show_deck")]
     public function showDeck(SessionInterface $session): Response
     {
@@ -35,7 +47,12 @@ class CardGameController extends AbstractController
         return $this->render('card/deck.html.twig', ["cardsInDeck" => $cardsInDeck]);
     }
 
-
+    /**
+     * Shuffle the deck of cards.
+     *
+     * @param SessionInterface $session The session interface to get and update game data.
+     * @return Response
+     */
     #[Route("/game/deck/shuffle", name: "deck_shuffle")]
     public function shuffleDeck(SessionInterface $session): Response
     {
@@ -48,6 +65,12 @@ class CardGameController extends AbstractController
         return $this->render('card/shuffle.html.twig', ["cardsInDeckShuffled" => $cardsInDeckShuffled]);
     }
 
+    /**
+     * Draw a card from the deck.
+     *
+     * @param SessionInterface $session The session interface to get and update game data.
+     * @return Response
+     */
     #[Route("/game/deck/draw", name: "deck_draw")]
     public function drawCard(SessionInterface $session): Response
     {
@@ -71,6 +94,13 @@ class CardGameController extends AbstractController
         ]);
     }
 
+    /**
+     * Draw a specific numer of cards from the deck.
+     *
+     * @param int $number The nomber of cards to ne drawn.
+     * @param SessionInterface $session The session interface to get and update game data.
+     * @return Response
+     */
     #[Route("/game/deck/draw/{number}", name: "deck_draw_number")]
     public function drawCardNumber(int $number, SessionInterface $session): Response
     {
@@ -102,6 +132,12 @@ class CardGameController extends AbstractController
         ]);
     }
 
+    /**
+     * View the current session data.
+     *
+     * @param SessionInterface $session The session interface to view the data in it.
+     * @return Response
+     */
     #[Route("/session", name: "session_view")]
     public function viewSession(SessionInterface $session): Response
     {
@@ -113,6 +149,12 @@ class CardGameController extends AbstractController
         ]);
     }
 
+    /**
+     * Delete the data in session
+     *
+     * @param SessionInterface $session The session interface to delete the data in session.
+     * @return Response
+     */
     #[Route("/session/delete", name: "session_delete")]
     public function deleteSession(SessionInterface $session): Response
     {

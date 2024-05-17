@@ -183,37 +183,37 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\CardGameController\u003A\u003Ahome\u0028\u0029",
             "name": "home",
-            "summary": "",
+            "summary": "Display\u0020the\u0020homepage\u0020for\u0020the\u0020card\u0020game.",
             "url": "classes/App-Controller-CardGameController.html#method_home"
         },                {
             "fqsen": "\\App\\Controller\\CardGameController\u003A\u003AshowDeck\u0028\u0029",
             "name": "showDeck",
-            "summary": "",
+            "summary": "Show\u0020the\u0020curresnt\u0020deck\u0020of\u0020cards.",
             "url": "classes/App-Controller-CardGameController.html#method_showDeck"
         },                {
             "fqsen": "\\App\\Controller\\CardGameController\u003A\u003AshuffleDeck\u0028\u0029",
             "name": "shuffleDeck",
-            "summary": "",
+            "summary": "Shuffle\u0020the\u0020deck\u0020of\u0020cards.",
             "url": "classes/App-Controller-CardGameController.html#method_shuffleDeck"
         },                {
             "fqsen": "\\App\\Controller\\CardGameController\u003A\u003AdrawCard\u0028\u0029",
             "name": "drawCard",
-            "summary": "",
+            "summary": "Draw\u0020a\u0020card\u0020from\u0020the\u0020deck.",
             "url": "classes/App-Controller-CardGameController.html#method_drawCard"
         },                {
             "fqsen": "\\App\\Controller\\CardGameController\u003A\u003AdrawCardNumber\u0028\u0029",
             "name": "drawCardNumber",
-            "summary": "",
+            "summary": "Draw\u0020a\u0020specific\u0020numer\u0020of\u0020cards\u0020from\u0020the\u0020deck.",
             "url": "classes/App-Controller-CardGameController.html#method_drawCardNumber"
         },                {
             "fqsen": "\\App\\Controller\\CardGameController\u003A\u003AviewSession\u0028\u0029",
             "name": "viewSession",
-            "summary": "",
+            "summary": "View\u0020the\u0020current\u0020session\u0020data.",
             "url": "classes/App-Controller-CardGameController.html#method_viewSession"
         },                {
             "fqsen": "\\App\\Controller\\CardGameController\u003A\u003AdeleteSession\u0028\u0029",
             "name": "deleteSession",
-            "summary": "",
+            "summary": "Delete\u0020the\u0020data\u0020in\u0020session",
             "url": "classes/App-Controller-CardGameController.html#method_deleteSession"
         },                {
             "fqsen": "\\App\\Controller\\ControllerJson",
@@ -253,22 +253,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\ControllerJsonDeck\u003A\u003AjsonApi\u0028\u0029",
             "name": "jsonApi",
-            "summary": "",
+            "summary": "Create\u0020a\u0020JSON\u0020representation\u0020of\u0020a\u0020deck\u0020of\u0020cards.\u0020And\u0020store\u0020it\u0020in\u0020session.",
             "url": "classes/App-Controller-ControllerJsonDeck.html#method_jsonApi"
         },                {
             "fqsen": "\\App\\Controller\\ControllerJsonDeck\u003A\u003AshuffleDeck\u0028\u0029",
             "name": "shuffleDeck",
-            "summary": "",
+            "summary": "Shuffles\u0020the\u0020deck.",
             "url": "classes/App-Controller-ControllerJsonDeck.html#method_shuffleDeck"
         },                {
             "fqsen": "\\App\\Controller\\ControllerJsonDeck\u003A\u003AdrawCards\u0028\u0029",
             "name": "drawCards",
-            "summary": "",
+            "summary": "Draw\u0020a\u0020card\u0020from\u0020the\u0020deck.",
             "url": "classes/App-Controller-ControllerJsonDeck.html#method_drawCards"
         },                {
             "fqsen": "\\App\\Controller\\ControllerJsonDeck\u003A\u003AdrawCardsNumber\u0028\u0029",
             "name": "drawCardsNumber",
-            "summary": "",
+            "summary": "Draw\u0020a\u0020specific\u0020number\u0020of\u0020cards\u0020from\u0020the\u0020deck.",
             "url": "classes/App-Controller-ControllerJsonDeck.html#method_drawCardsNumber"
         },                {
             "fqsen": "\\App\\Controller\\ControllerTwig",
@@ -363,27 +363,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003Ahome\u0028\u0029",
             "name": "home",
-            "summary": "",
+            "summary": "Render\u0020the\u0020homepage\u0020for\u0020the\u0020game.",
             "url": "classes/App-Controller-GameController.html#method_home"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003Astart\u0028\u0029",
             "name": "start",
-            "summary": "",
+            "summary": "Start\u0020a\u0020new\u0020game\u0020session.",
             "url": "classes/App-Controller-GameController.html#method_start"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003Adraw\u0028\u0029",
             "name": "draw",
-            "summary": "",
+            "summary": "Draw\u0020a\u0020card\u0020during\u0020the\u0020game.",
             "url": "classes/App-Controller-GameController.html#method_draw"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003Astop\u0028\u0029",
             "name": "stop",
-            "summary": "",
+            "summary": "Stop\u0020the\u0020gmae\u0020and\u0020let\u0020the\u0020bank\u0020play.",
             "url": "classes/App-Controller-GameController.html#method_stop"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003Adoc\u0028\u0029",
             "name": "doc",
-            "summary": "",
+            "summary": "Render\u0020documentation\u0020for\u0020the\u0020game.",
             "url": "classes/App-Controller-GameController.html#method_doc"
         },                {
             "fqsen": "\\App\\Controller\\LibraryController",
@@ -483,27 +483,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Dice\\Dice",
             "name": "Dice",
-            "summary": "",
+            "summary": "Class\u0020Dice\nRepserent\u0020a\u0020Dice.",
             "url": "classes/App-Dice-Dice.html"
         },                {
             "fqsen": "\\App\\Dice\\Dice\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020for\u0020Dice\u0020class.",
             "url": "classes/App-Dice-Dice.html#method___construct"
         },                {
             "fqsen": "\\App\\Dice\\Dice\u003A\u003Aroll\u0028\u0029",
             "name": "roll",
-            "summary": "",
+            "summary": "Roll\u0020the\u0020dice\u0020and\u0020return\u0020the\u0020rolled\u0020value.",
             "url": "classes/App-Dice-Dice.html#method_roll"
         },                {
             "fqsen": "\\App\\Dice\\Dice\u003A\u003AgetValue\u0028\u0029",
             "name": "getValue",
-            "summary": "",
+            "summary": "Get\u0020the\u0020valye\u0020of\u0020the\u0020dice.",
             "url": "classes/App-Dice-Dice.html#method_getValue"
         },                {
             "fqsen": "\\App\\Dice\\Dice\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
-            "summary": "",
+            "summary": "Get\u0020the\u0020dice\u0020value\u0020as\u0020a\u0020string\u0020representation.",
             "url": "classes/App-Dice-Dice.html#method_getAsString"
         },                {
             "fqsen": "\\App\\Dice\\Dice\u003A\u003A\u0024value",
@@ -513,17 +513,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Dice\\DiceGraphic",
             "name": "DiceGraphic",
-            "summary": "",
+            "summary": "Class\u0020Dice\nRepserent\u0020a\u0020Dice.",
             "url": "classes/App-Dice-DiceGraphic.html"
         },                {
             "fqsen": "\\App\\Dice\\DiceGraphic\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020for\u0020Dice\u0020class.",
             "url": "classes/App-Dice-DiceGraphic.html#method___construct"
         },                {
             "fqsen": "\\App\\Dice\\DiceGraphic\u003A\u003AgetAsString\u0028\u0029",
             "name": "getAsString",
-            "summary": "",
+            "summary": "Get\u0020the\u0020dice\u0020value\u0020as\u0020a\u0020string\u0020representation.",
             "url": "classes/App-Dice-DiceGraphic.html#method_getAsString"
         },                {
             "fqsen": "\\App\\Dice\\DiceGraphic\u003A\u003A\u0024representation",

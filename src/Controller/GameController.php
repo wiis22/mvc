@@ -15,12 +15,23 @@ use App\AGame21\Player;
 
 class GameController extends AbstractController
 {
+    /**
+     * Render the homepage for the game.
+     *
+     * @return Response
+     */
     #[Route("/game", name: "info_game")]
     public function home(): Response
     {
         return $this->render('game/home.html.twig');
     }
 
+    /**
+     * Start a new game session.
+     *
+     * @param SessionInterface $session The session interface to store game data.
+     * @return Response
+     */
     #[Route("/game/start", name: "start")]
     public function start(SessionInterface $session): Response
     {
@@ -44,6 +55,12 @@ class GameController extends AbstractController
         return $this->render('game/start.html.twig');
     }
 
+    /**
+     * Draw a card during the game.
+     *
+     * @param SessionInterface $session The session interface to store game data.
+     * @return Response
+     */
     #[Route("/game/draw", name: "draw_21", methods: ['POST'])]
     public function draw(SessionInterface $session): Response
     {
@@ -87,6 +104,12 @@ class GameController extends AbstractController
         return $this->render('game/play.html.twig', [ "p_hand" => $test, "p_tot" => $tot ]);
     }
 
+    /**
+     * Stop the gmae and let the bank play.
+     *
+     * @param SessionInterface $session The session interface to store game data.
+     * @return Response
+     */
     #[Route("/game/stop", name: "stop_21", methods: ['POST'])]
     public function stop(SessionInterface $session): Response
     {
@@ -140,6 +163,11 @@ class GameController extends AbstractController
         return  $this->render('game/bank.html.twig', [ "p_hand" => $playerHand, "p_tot" => $playerTot, "b_hand" => $test, "b_tot" => $tot ]);
     }
 
+    /**
+     * Render documentation for the game.
+     *
+     * @return Response
+     */
     #[Route("/game/doc", name: "doc")]
     public function doc(): Response
     {
