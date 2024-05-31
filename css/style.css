@@ -1,0 +1,89 @@
+/* ======================    base    ================== */
+body {
+    background-color: #1f1f1f;
+}
+
+* {
+    color: #fff;
+    font-family: "Sono", monospace;
+    font-size: 1.2rem;
+}
+
+
+/* =========================    header + nav    ============================================ */
+header {
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .site-title {
+    font-size: 3rem;
+    color: green;
+}
+
+.navA {
+    font-size: 2rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+    color: green;
+}
+
+.navA:hover {
+    color: #fff;
+    background-color: green;
+    transition-duration: 0.25s;
+}
+
+.navUl {
+    display: block;
+    /* flex-direction: row;
+    justify-content: space-evenly; */
+    text-align: center;
+}
+
+.flash-notice {
+    padding: 0.5em;
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+}
+.flash-notice:before {
+    content: "ⓘ";
+}
+
+.flash-warning {
+    padding: 0.5em;
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+.flash-warning:before {
+    content: "⚠";
+}
+
+main {
+    margin: 0 auto;
+    max-width: 90%;
+    padding: 2em;
+}
+
+.text-input {
+    color: #333;
+}
+
+button {
+    background-color: #1f1f1f;
+    border: #f0f0f0 solid 1px;
+}
+
+/* ===========================   Footer    ====================================== */
+
+footer {
+    display: flex;
+    justify-content: center;
+    border-top: #f0f0f0 solid 2px;
+    padding: 2rem;
+}

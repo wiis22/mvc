@@ -5,9 +5,7 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="{{ asset('img/northenLigthsIcon.png') }}">
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+        <link rel="stylesheet" href="../css/style.css" />
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
@@ -15,8 +13,8 @@
         {% endblock %}
     </head>
     <body>
-        <header class="site-header" style="background-image: url({{ asset('img/background.jpg') }})">
-            <span class="site-title">My Symfony Site for MVC</span>
+        <header class="site-header-proj">
+            <span class="site-title">Mitt projekt för MVC</span>
         </header>
 
         <nav>
@@ -24,12 +22,7 @@
                 <a href="{{ path('home') }}" class="navA">Home</a>
                 <a href="{{ path('about') }}" class="navA">About</a>
                 <a href="{{ path('report') }}" class="navA">Report</a>
-                <a href="{{ path('info_game') }}" class="navA">Game 21 Info</a>
-                <a href="{{ path('card_start') }}" class="navA">Card</a>
                 <a href="{{ path('info_proj') }}" class="navA">Proj info</a>
-                <a href="{{ path('app_library') }}" class="navA">Library</a>
-                <a href="{{ path('lucky_number') }}" class="navA">Lucky number</a>
-                <a href="{{ path('metrics') }}" class="navA">Metrics analys</a>
             </ul>
         </nav>
 

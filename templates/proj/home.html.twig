@@ -1,0 +1,36 @@
+{% extends "proj/base.html.twig" %}
+
+{% block title %}Game{% endblock %}
+
+{% block body %}
+<h1 class="pigh1">Projekt Information</h1>
+
+{{ include('pig/flash.html.twig') }}
+
+<p>Denna sida är bas sidan för kmom10. Där jag har valt att göra ett Black Jack spel. Här är en länk till spel info och mer regler: <a href="https://sv.wikipedia.org/wiki/Black_Jack">Black Jack</a>.</p>
+
+<h3>Kort beskrvinign av spelregler:</h3>
+<p> Spelets idé är att komma så nära talet 21 utan att bli "tjock". Där du dessutom måste ha bättre hand en dealern/banken.
+<p> Alla klädda kort är värda 10, A/ess är antingen 11 eller 1. Om spelaren första två kort är ett A/ess och ett klätt kort får spelaren Black Jack och det get 1.5 * insatsen.
+Däremot om dealern/banken får ett A/ess som första kort så kan spelaren att välja att ta "jämna pengar", vilket betyder att man får en vinst lika stor som sin insats.
+</p>
+
+
+{# <h2 class="spellänk"><a href="{{ path('start') }}">Börja spela 21!</a></h2> #}
+    {# <a href="{{ path('deck_shuffle') }}">Shuffle the Deck</a>
+    {# <a href="{{ path('deck_draw') }}">Draw a card from Deck</a> #}
+<a href="{{ path('session_view') }}">Session</a><br>
+<a href="{{ path('session_delete') }}">Session Delete</a>
+
+<form action="proj/init" method="POST" class="">
+    <strong>Spelnamn: </strong>
+    <input type="text" name="user" placeholder="Mumin" class="text-input" required><br>
+    <strong>Antal händer 1-3: </strong>
+    <input type="number" name="number" placeholder="" class="text-input" required min="1" step="1" max="3"><br>
+    <button trype="submit">Börja spela</button>
+</form>
+
+{# <p> #}
+{# Jag anväder mig utav tre huvudklasser, Card, Cardhand och DeckOfCards. #}
+
+{% endblock %}
