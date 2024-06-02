@@ -116,10 +116,12 @@ class ProjController extends AbstractController
         //setup Hands ie players to get cards and values
         $playersHandsValues = [];
         $playersHandsString = [];
+        $test = 0;
+
         if ($session->get("playersHandsString")) {
             $playersHandsString = $session->get("playersHandsString");
             $playersHandsValues = $session->get("playersHandsValues");
-            error_log(print_r($playersHandsValues, true));
+            // error_log(print_r($playersHandsValues, true));
         }
         if (!($session->get("playersHandsString"))) {
             for ($i = 0; $i < $nrHands; $i++) {
@@ -127,10 +129,11 @@ class ProjController extends AbstractController
                 $playerHand->deal(2, $deck);
                 $playersHandsString[$i] = $playerHand->getPCardsAsString();
                 $playersHandsValues[$i] = $playerHand->getPPointsBlackJack();
+                $test = $playerHand->getPPointsBlackJack();
             }
             $session->set("playersHandsString", $playersHandsString);
             $session->set("playersHandsValues", $playersHandsValues);
-            error_log(print_r($playersHandsValues, true));
+            // error_log(print_r($playersHandsValues, true));
         }
 
 
@@ -139,7 +142,8 @@ class ProjController extends AbstractController
             "HandsNr" => $session->get("numberOfHands"),
             "playersHandsString" => $playersHandsString,
             "playersHandsValues" => $playersHandsValues,
-            "insatser" => $insatser
+            "insatser" => $insatser,
+            "test" => $test
         ];
 
         return $this->render('proj/deal_base.html.twig', $data); // denna ska leda till att man händerna får två kort och

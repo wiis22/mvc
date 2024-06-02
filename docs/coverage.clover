@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1717330230">
-  <project timestamp="1717330230">
+<coverage generated="1717330944">
+  <project timestamp="1717330944">
     <file name="/home/axaite/dbwebb-kurser/mvc/me/report/src/AGame21/Player.php">
       <class name="App\AGame21\Player" namespace="global">
         <metrics complexity="14" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="45" coveredstatements="45" elements="49" coveredelements="49"/>
@@ -718,7 +718,7 @@
     </file>
     <file name="/home/axaite/dbwebb-kurser/mvc/me/report/src/Controller/ProjController.php">
       <class name="App\Controller\ProjController" namespace="global">
-        <metrics complexity="11" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="53" coveredstatements="0" elements="57" coveredelements="0"/>
+        <metrics complexity="11" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="54" coveredstatements="0" elements="58" coveredelements="0"/>
       </class>
       <line num="23" type="method" name="home" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="26" type="stmt" count="0"/>
@@ -758,26 +758,27 @@
       <line num="117" type="stmt" count="0"/>
       <line num="118" type="stmt" count="0"/>
       <line num="119" type="stmt" count="0"/>
-      <line num="120" type="stmt" count="0"/>
       <line num="121" type="stmt" count="0"/>
       <line num="122" type="stmt" count="0"/>
-      <line num="124" type="stmt" count="0"/>
-      <line num="125" type="stmt" count="0"/>
+      <line num="123" type="stmt" count="0"/>
       <line num="126" type="stmt" count="0"/>
       <line num="127" type="stmt" count="0"/>
       <line num="128" type="stmt" count="0"/>
       <line num="129" type="stmt" count="0"/>
+      <line num="130" type="stmt" count="0"/>
       <line num="131" type="stmt" count="0"/>
       <line num="132" type="stmt" count="0"/>
-      <line num="133" type="stmt" count="0"/>
-      <line num="138" type="stmt" count="0"/>
-      <line num="139" type="stmt" count="0"/>
-      <line num="140" type="stmt" count="0"/>
+      <line num="134" type="stmt" count="0"/>
+      <line num="135" type="stmt" count="0"/>
       <line num="141" type="stmt" count="0"/>
       <line num="142" type="stmt" count="0"/>
       <line num="143" type="stmt" count="0"/>
+      <line num="144" type="stmt" count="0"/>
       <line num="145" type="stmt" count="0"/>
-      <metrics loc="152" ncloc="118" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="53" coveredstatements="0" elements="57" coveredelements="0"/>
+      <line num="146" type="stmt" count="0"/>
+      <line num="147" type="stmt" count="0"/>
+      <line num="149" type="stmt" count="0"/>
+      <metrics loc="156" ncloc="120" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="54" coveredstatements="0" elements="58" coveredelements="0"/>
     </file>
     <file name="/home/axaite/dbwebb-kurser/mvc/me/report/src/Dice/Dice.php">
       <class name="App\Dice\Dice" namespace="global">
@@ -917,6 +918,6 @@
       <line num="52" type="stmt" count="0"/>
       <metrics loc="80" ncloc="44" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="16" coveredelements="0"/>
     </file>
-    <metrics files="22" loc="2167" ncloc="1771" classes="21" methods="110" coveredmethods="27" conditionals="0" coveredconditionals="0" statements="674" coveredstatements="92" elements="784" coveredelements="119"/>
+    <metrics files="22" loc="2171" ncloc="1773" classes="21" methods="110" coveredmethods="27" conditionals="0" coveredconditionals="0" statements="675" coveredstatements="92" elements="785" coveredelements="119"/>
   </project>
 </coverage>
