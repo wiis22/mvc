@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2024-05-17 17:31:21        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2024-06-02 12:11:05        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -292,6 +292,31 @@
         "relations": []
     },
     {
+        "name": "\\App\\Controller\\ProjController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\Symfony\\Component\\HttpFoundation\\Request",
+            "\\App\\Card\\DeckOfCardsGraphic",
+            "\\App\\AGame21\\Player"
+        ]
+    },
+    {
+        "name": "\\Symfony\\Component\\HttpFoundation\\Request",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\App\\AGame21\\Player",
+        "size": 3000,
+        "relations": [
+            "\\App\\Card\\CardHand",
+            "\\App\\Card\\DeckOfCardsGraphic"
+        ]
+    },
+    {
         "name": "\\App\\Controller\\LibraryController",
         "size": 3000,
         "relations": [
@@ -302,11 +327,6 @@
             "\\App\\Entity\\Library",
             "\\App\\Repository\\LibraryRepository"
         ]
-    },
-    {
-        "name": "\\Symfony\\Component\\HttpFoundation\\Request",
-        "size": 3000,
-        "relations": []
     },
     {
         "name": "\\Doctrine\\Persistence\\ManagerRegistry",
@@ -358,14 +378,6 @@
             "\\Symfony\\Component\\HttpFoundation\\Response",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
             "\\App\\AGame21\\Player",
-            "\\App\\Card\\DeckOfCardsGraphic"
-        ]
-    },
-    {
-        "name": "\\App\\AGame21\\Player",
-        "size": 3000,
-        "relations": [
-            "\\App\\Card\\CardHand",
             "\\App\\Card\\DeckOfCardsGraphic"
         ]
     },

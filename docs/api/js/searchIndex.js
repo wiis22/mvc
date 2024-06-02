@@ -11,6 +11,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-AGame21-Player.html#method_getPCardsAsString"
         },                {
+            "fqsen": "\\App\\AGame21\\Player\u003A\u003AgetPPointsBlackJack\u0028\u0029",
+            "name": "getPPointsBlackJack",
+            "summary": "",
+            "url": "classes/App-AGame21-Player.html#method_getPPointsBlackJack"
+        },                {
             "fqsen": "\\App\\AGame21\\Player\u003A\u003AgetPPoints\u0028\u0029",
             "name": "getPPoints",
             "summary": "",
@@ -480,6 +485,31 @@ Search.appendIndex(
             "name": "showProductByMinimumValue",
             "summary": "",
             "url": "classes/App-Controller-ProductController.html#method_showProductByMinimumValue"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjController",
+            "name": "ProjController",
+            "summary": "",
+            "url": "classes/App-Controller-ProjController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjController\u003A\u003Ahome\u0028\u0029",
+            "name": "home",
+            "summary": "Render\u0020the\u0020homepage\u0020for\u0020the\u0020game.",
+            "url": "classes/App-Controller-ProjController.html#method_home"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjController\u003A\u003Ainit\u0028\u0029",
+            "name": "init",
+            "summary": "Initialize\u0020the\u0020game",
+            "url": "classes/App-Controller-ProjController.html#method_init"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjController\u003A\u003Astart\u0028\u0029",
+            "name": "start",
+            "summary": "Render\u0020the\u0020start\u0020page\u0020for\u0020the\u0020game.\u0020In\u0020page\u0020meking\u0020the\u0020bet\u0020for\u0020every\u0020hand",
+            "url": "classes/App-Controller-ProjController.html#method_start"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjController\u003A\u003Ainsats\u0028\u0029",
+            "name": "insats",
+            "summary": "Deal\u0020cards\u0020to\u0020the\u0020player",
+            "url": "classes/App-Controller-ProjController.html#method_insats"
         },                {
             "fqsen": "\\App\\Dice\\Dice",
             "name": "Dice",

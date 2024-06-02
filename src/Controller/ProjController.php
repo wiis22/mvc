@@ -55,7 +55,7 @@ class ProjController extends AbstractController
         //om user redan finns i sesson så gör inget annars får user ett value på 100
         if (!($session->get("$user"))) {
             $value = 100;
-            $session->set($user, $value);
+            $session->set("$user", $value);
         }
         $session->set("numberOfHands", $number);
 
@@ -73,7 +73,7 @@ class ProjController extends AbstractController
     {
         $data = [
             "Value" => $session->get($user),
-            "Hands" =>$session->get("numberOfHands")
+            "Hands" => $session->get("numberOfHands")
         ];
 
         //skickar med hur många händer som ska med och visas up samt hur högt value user har.
@@ -94,7 +94,7 @@ class ProjController extends AbstractController
 
         //Set the bet ot hand
         $insatser = [];
-        for ($i=1; $i <= $nrHands; $i++) { 
+        for ($i = 1; $i <= $nrHands; $i++) {
             $handValue = $request->request->getInt('hand' . $i);
             $insatser[$i] = $handValue;
             $session->set('hand' . $i, $handValue);
@@ -119,9 +119,10 @@ class ProjController extends AbstractController
         if ($session->get("playersHandsString")) {
             $playersHandsString = $session->get("playersHandsString");
             $playersHandsValues = $session->get("playersHandsValues");
+            error_log(print_r($playersHandsValues, true));
         }
         if (!($session->get("playersHandsString"))) {
-            for ($i=0; $i < $nrHands; $i++) { 
+            for ($i = 0; $i < $nrHands; $i++) {
                 $playerHand = new Player();
                 $playerHand->deal(2, $deck);
                 $playersHandsString[$i] = $playerHand->getPCardsAsString();
@@ -129,6 +130,7 @@ class ProjController extends AbstractController
             }
             $session->set("playersHandsString", $playersHandsString);
             $session->set("playersHandsValues", $playersHandsValues);
+            error_log(print_r($playersHandsValues, true));
         }
 
 
@@ -140,7 +142,7 @@ class ProjController extends AbstractController
             "insatser" => $insatser
         ];
 
-        return $this->render('proj/deal_base.html.twig', $data); // denna ska leda till att man händerna får två kort och 
+        return $this->render('proj/deal_base.html.twig', $data); // denna ska leda till att man händerna får två kort och
         //sedan få man bestämma per hand om man vill ha ett till i en loop till man blir för stor eller har 21.
     }
 
