@@ -18,6 +18,53 @@ class Player extends CardHand
         return $deck->getCardsAsString();
     }
 
+
+    /**
+     * Gets the total points in hand for black jack.
+     *
+     * @return int total value of hand
+     */
+    /**
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     */
+    public function getPPointsBlackJack(): int
+    {
+        $cards = $this->getCards();
+        $tot = 0;
+        $aceC = 0;
+
+        //Mapping the card values.
+        $valueMap = [
+            'A' => 11,
+            'K' => 10,
+            'Q' => 10,
+            'J' => 10
+        ];
+
+        //Check each card in hand to se tot value.
+        foreach ($cards as $card) {
+            if ($card !== null) {
+                $value = $card->getValue();
+                //Using the map to get the card values.
+                $cardValue = $valueMap[$value] ?? (int)$value;
+
+                if($value === 'A') {
+                    $aceC++;
+                }
+
+                $tot += $cardValue;
+            }
+        }
+
+        //Check if we got an Ace and if tot is over 21.
+        while ($aceC > 0 && $tot > 21) {
+            $tot -= 10;
+            $aceC--;
+        }
+
+        return $tot;
+    }
+
     /**
      * Gets the total points in hand.
      *
@@ -40,7 +87,6 @@ class Player extends CardHand
             'J' => 11
         ];
 
-
         //Check each card in hand to se tot value.
         foreach ($cards as $card) {
             if ($card !== null) {
@@ -54,31 +100,8 @@ class Player extends CardHand
                 }
 
                 $tot += $cardValue;
-
-
-                // //Check what value a card gives.
-                // switch ($value) {
-                //     case 'A':
-                //         $aceC++;
-                //         $tot += 1;
-                //         break;
-                //     case 'K':
-                //         $tot += 13;
-                //         break;
-                //     case 'Q':
-                //         $tot += 12;
-                //         break;
-                //     case 'J':
-                //         $tot += 11;
-                //         break;
-
-                //     default:
-                //         $tot += (int) $value;
-                //         break;
-                // }
             }
         }
-
 
         //Check if we got an Ace and if we can add 13 without going bust.
         while ($aceC > 0 && $tot + 13 <= 21) {

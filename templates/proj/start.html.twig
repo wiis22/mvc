@@ -3,6 +3,49 @@
 {% block title %}Game{% endblock %}
 
 {% block body %}
+{{ include('pig/flash.html.twig') }}
+<h2>Antal händer: {{ Hands }}</h2>
+<h2>Value: {{Value}}</h2>
+{# sätt upp så att man ser antal händer, banken och så att man kan lägga ner ett value per hand #}
+<div class="board">
+    <div class="dealer">
+        <h1>Dealer</h1>
+    </div>
+    <form action="/public/proj/insats" method="POST" class="insatsen" id="insatsForm">
+        <div class="hands">
+            {% for i in 1..Hands %}
+                <div class="hand">
+                    <h1>Hand {{ i }}</h1>
+                    <input type="number" name="hand{{ i }}" id="hand{{ i }}" min="10" max="{{ Value - (Hands * 10) }}" placeholder="insats" required class="text-input">
+                </div>
+            {% endfor %}
+        </div>
+        <button trype="submit">Lägg insatsen</button>
+    </form>
+</div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const form = document.getElementById('insatsForm');
+
+        let maxValue = {{ Value }};
+
+        form.addEventListener('submit', function(e) {
+            let tot = 0;
+
+            const inputs = form.querySelectorAll('input[type="number"]');
+
+            inputs.forEach(function(input) {
+                tot += parseInt(input.value) || 0;
+            });
+
+            if (tot > maxValue) {
+                alert("Totala insatsen är för stor!")
+                e.preventDefault();
+            }
+        })
+    });
+</script>
 
 {% endblock %}
