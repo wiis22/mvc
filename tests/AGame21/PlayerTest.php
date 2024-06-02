@@ -43,4 +43,24 @@ class PlayerTest extends TestCase
         $this->assertSame(21, $player->getPPoints());
 
     }
+
+    
+    /**
+     * test get player points.
+     * @return void
+     */
+    public function testGetPointsBackJack()
+    {
+        $player = new Player();
+
+        $player->setCards([new Card("A", "♠"), new Card("K", "♠")]);
+        $this->assertSame(21, $player->getPPointsBlackJack());
+
+        $player->setCards([new Card("J", "♠"), new Card("Q", "♠")]);
+        $this->assertSame(20, $player->getPPointsBlackJack());
+
+        $player->setCards([new Card("A", "♠"), new Card("7", "♠")]);
+        $this->assertSame(18, $player->getPPointsBlackJack());
+
+    }
 }

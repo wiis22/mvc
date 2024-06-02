@@ -19,7 +19,9 @@
                         <li class="card">{{ card }}</li>
                     {% endfor %}
                 </ul>
-                <strong>Insats: {{ insatser[i] }}</strong>
+                <strong>Insats: {{ insatser[i] }}</strong><br>
+                <strong>Handens värde: {{ playersHandsValues }}</strong>
+                {# <strong>Handens värde: {{ playersHandsValues[i - 1] }}</strong> #}
             </div>
         {% endfor %}
     </div>

@@ -114,18 +114,23 @@ class ProjController extends AbstractController
 
 
         //Ska inte ta och ge ut nya kort om playersHandsString finns i session.
-        //setup Hands ie players to get cards
+        //setup Hands ie players to get cards and values
+        $playersHandsValues = [];
         $playersHandsString = [];
         if ($session->get("playersHandsString")) {
             $playersHandsString = $session->get("playersHandsString");
+            $playersHandsValues = $session->get("playersHandsValues");
         }
         if (!($session->get("playersHandsString"))) {
             for ($i=0; $i < $nrHands; $i++) { 
                 $playerHand = new Player();
                 $playerHand->deal(2, $deck);
                 $playersHandsString[$i] = $playerHand->getPCardsAsString();
+                $playersHandsValues[$i] = $playerHand->getPPointsBlackJack();
+                var_dump($playerHand->getPPointsBlackJack());
             }
             $session->set("playersHandsString", $playersHandsString);
+            $session->set("playersHandsValues", $playersHandsValues);
         }
 
 
@@ -133,6 +138,7 @@ class ProjController extends AbstractController
         $data = [
             "HandsNr" => $session->get("numberOfHands"),
             "playersHandsString" => $playersHandsString,
+            "playersHandsValues" => $playersHandsValues,
             "insatser" => $insatser
         ];
 
