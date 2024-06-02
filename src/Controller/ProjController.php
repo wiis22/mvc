@@ -88,7 +88,6 @@ class ProjController extends AbstractController
     #[Route("/proj/insats", methods: ["POST"])]
     public function insats(SessionInterface $session, Request $request): Response
     {
-        $user = $request->request->get('user');
 
         $nrHands = $session->get("numberOfHands");
 
@@ -127,7 +126,6 @@ class ProjController extends AbstractController
                 $playerHand->deal(2, $deck);
                 $playersHandsString[$i] = $playerHand->getPCardsAsString();
                 $playersHandsValues[$i] = $playerHand->getPPointsBlackJack();
-                var_dump($playerHand->getPPointsBlackJack());
             }
             $session->set("playersHandsString", $playersHandsString);
             $session->set("playersHandsValues", $playersHandsValues);
