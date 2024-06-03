@@ -511,6 +511,36 @@ Search.appendIndex(
             "summary": "Deal\u0020cards\u0020to\u0020the\u0020player",
             "url": "classes/App-Controller-ProjController.html#method_insats"
         },                {
+            "fqsen": "\\App\\Controller\\ProjController\u003A\u003Adraw\u0028\u0029",
+            "name": "draw",
+            "summary": "Draw\u0020a\u0020card\u0020to\u0020a\u0020specific\u0020hand",
+            "url": "classes/App-Controller-ProjController.html#method_draw"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjController\u003A\u003Astop\u0028\u0029",
+            "name": "stop",
+            "summary": "Stop\u0020for\u0020a\u0020specific\u0020hand.",
+            "url": "classes/App-Controller-ProjController.html#method_stop"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjController\u003A\u003Adealer\u0028\u0029",
+            "name": "dealer",
+            "summary": "The\u0020dealers\u0020time\u0020to\u0020draw",
+            "url": "classes/App-Controller-ProjController.html#method_dealer"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjController\u003A\u003AdrawToDealer\u0028\u0029",
+            "name": "drawToDealer",
+            "summary": "",
+            "url": "classes/App-Controller-ProjController.html#method_drawToDealer"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjController\u003A\u003AcheckHands\u0028\u0029",
+            "name": "checkHands",
+            "summary": "",
+            "url": "classes/App-Controller-ProjController.html#method_checkHands"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjController\u003A\u003AdeleteSession\u0028\u0029",
+            "name": "deleteSession",
+            "summary": "Delete\u0020the\u0020data\u0020in\u0020session",
+            "url": "classes/App-Controller-ProjController.html#method_deleteSession"
+        },                {
             "fqsen": "\\App\\Dice\\Dice",
             "name": "Dice",
             "summary": "Class\u0020Dice\nRepserent\u0020a\u0020Dice.",

@@ -1,0 +1,51 @@
+{% extends "proj/base.html.twig" %}
+
+{% block title %}Game{% endblock %}
+
+{% block body %}
+{{ include('pig/flash.html.twig') }}
+<h2>Antal händer: {{ HandsNr }}</h2>
+<h2>Value: {{ Value }}</h2>
+{# nästa steg är att få till så att man kan dra kort eller stanna. när alla händer är klara så drar banken sitt. #}
+<div class="board">
+    <div class="dealer">
+        <h1>Dealer</h1><br>
+            <div class="hand">
+                <ul class="cards">
+                    {% for card in bankHandString %}
+                        <li class="card">{{ card }}</li>
+                    {% endfor %}
+                </ul>
+                <strong>Dealers värde: {{ totBank }}</strong><br>
+            </div>
+    </div>
+    <div class="hands">
+        {% for i in 1..HandsNr %}
+            <div class="hand">
+                <h1>Hand {{ i }}</h1>
+                <ul class="cards">
+                    {% for card in playersHandsString[ i - 1 ] %}
+                        <li class="card">{{ card }}</li>
+                    {% endfor %}
+                </ul>
+
+                <strong>Handens värde: {{ playersHandsValues[i - 1] }}</strong><br>
+                <strong>Insats värde: {{ insatser[i] }}</strong><br>
+                {# Här under ska det skrivas ut om handen har vunnit och hur mycket det har vunnit. #}
+                <strong>{{ messages[ i - 1 ] }}</strong><br>
+                <strong>Denna hand är klar.</strong>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if Value != 0 and Value > 10 %}
+        <form action="/public/proj/init" method="POST" class="">
+            <input type="hidden" name="user" value="{{ user }}">
+            <strong>Antal händer 1-3: </strong>
+            <input type="number" name="number" placeholder="" class="text-input" required min="1" step="1" max="3"><br>
+            <button trype="submit">Spela igen.</button>
+        </form>
+    {% endif %}
+</div>
+
+{% endblock %}
