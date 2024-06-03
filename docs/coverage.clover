@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1717455307">
-  <project timestamp="1717455307">
+<coverage generated="1717456309">
+  <project timestamp="1717456309">
     <file name="/home/axaite/dbwebb-kurser/mvc/me/report/src/AGame21/Player.php">
       <class name="App\AGame21\Player" namespace="global">
         <metrics complexity="14" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="45" coveredstatements="45" elements="49" coveredelements="49"/>
@@ -718,7 +718,7 @@
     </file>
     <file name="/home/axaite/dbwebb-kurser/mvc/me/report/src/Controller/ProjController.php">
       <class name="App\Controller\ProjController" namespace="global">
-        <metrics complexity="41" methods="10" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="232" coveredstatements="0" elements="242" coveredelements="0"/>
+        <metrics complexity="39" methods="10" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="230" coveredstatements="0" elements="240" coveredelements="0"/>
       </class>
       <line num="23" type="method" name="home" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="26" type="stmt" count="0"/>
@@ -866,7 +866,7 @@
       <line num="301" type="stmt" count="0"/>
       <line num="302" type="stmt" count="0"/>
       <line num="305" type="stmt" count="0"/>
-      <line num="313" type="method" name="dealer" visibility="public" complexity="5" crap="30" count="0"/>
+      <line num="313" type="method" name="dealer" visibility="public" complexity="3" crap="12" count="0"/>
       <line num="317" type="stmt" count="0"/>
       <line num="318" type="stmt" count="0"/>
       <line num="319" type="stmt" count="0"/>
@@ -876,17 +876,18 @@
       <line num="324" type="stmt" count="0"/>
       <line num="327" type="stmt" count="0"/>
       <line num="328" type="stmt" count="0"/>
-      <line num="329" type="stmt" count="0"/>
+      <line num="331" type="stmt" count="0"/>
       <line num="332" type="stmt" count="0"/>
-      <line num="333" type="stmt" count="0"/>
       <line num="336" type="stmt" count="0"/>
       <line num="337" type="stmt" count="0"/>
-      <line num="340" type="stmt" count="0"/>
+      <line num="338" type="stmt" count="0"/>
       <line num="341" type="stmt" count="0"/>
+      <line num="342" type="stmt" count="0"/>
+      <line num="343" type="stmt" count="0"/>
       <line num="344" type="stmt" count="0"/>
-      <line num="345" type="stmt" count="0"/>
-      <line num="346" type="stmt" count="0"/>
-      <line num="347" type="stmt" count="0"/>
+      <line num="348" type="stmt" count="0"/>
+      <line num="349" type="stmt" count="0"/>
+      <line num="350" type="stmt" count="0"/>
       <line num="351" type="stmt" count="0"/>
       <line num="352" type="stmt" count="0"/>
       <line num="353" type="stmt" count="0"/>
@@ -896,55 +897,54 @@
       <line num="357" type="stmt" count="0"/>
       <line num="358" type="stmt" count="0"/>
       <line num="359" type="stmt" count="0"/>
-      <line num="360" type="stmt" count="0"/>
       <line num="361" type="stmt" count="0"/>
-      <line num="362" type="stmt" count="0"/>
-      <line num="364" type="stmt" count="0"/>
-      <line num="371" type="method" name="drawToDealer" visibility="private" complexity="2" crap="6" count="0"/>
+      <line num="369" type="method" name="drawToDealer" visibility="private" complexity="2" crap="6" count="0"/>
+      <line num="371" type="stmt" count="0"/>
+      <line num="372" type="stmt" count="0"/>
       <line num="373" type="stmt" count="0"/>
       <line num="374" type="stmt" count="0"/>
       <line num="375" type="stmt" count="0"/>
-      <line num="376" type="stmt" count="0"/>
       <line num="377" type="stmt" count="0"/>
-      <line num="379" type="stmt" count="0"/>
-      <line num="383" type="method" name="checkHands" visibility="private" complexity="9" crap="90" count="0"/>
-      <line num="385" type="stmt" count="0"/>
-      <line num="386" type="stmt" count="0"/>
+      <line num="381" type="method" name="checkHands" visibility="private" complexity="9" crap="90" count="0"/>
+      <line num="383" type="stmt" count="0"/>
+      <line num="384" type="stmt" count="0"/>
+      <line num="387" type="stmt" count="0"/>
       <line num="389" type="stmt" count="0"/>
+      <line num="390" type="stmt" count="0"/>
       <line num="391" type="stmt" count="0"/>
-      <line num="392" type="stmt" count="0"/>
-      <line num="393" type="stmt" count="0"/>
+      <line num="394" type="stmt" count="0"/>
       <line num="396" type="stmt" count="0"/>
+      <line num="397" type="stmt" count="0"/>
       <line num="398" type="stmt" count="0"/>
       <line num="399" type="stmt" count="0"/>
-      <line num="400" type="stmt" count="0"/>
-      <line num="401" type="stmt" count="0"/>
+      <line num="402" type="stmt" count="0"/>
       <line num="404" type="stmt" count="0"/>
+      <line num="405" type="stmt" count="0"/>
       <line num="406" type="stmt" count="0"/>
       <line num="407" type="stmt" count="0"/>
-      <line num="408" type="stmt" count="0"/>
-      <line num="409" type="stmt" count="0"/>
+      <line num="410" type="stmt" count="0"/>
       <line num="412" type="stmt" count="0"/>
+      <line num="413" type="stmt" count="0"/>
       <line num="414" type="stmt" count="0"/>
-      <line num="415" type="stmt" count="0"/>
-      <line num="416" type="stmt" count="0"/>
+      <line num="417" type="stmt" count="0"/>
       <line num="419" type="stmt" count="0"/>
+      <line num="420" type="stmt" count="0"/>
       <line num="421" type="stmt" count="0"/>
       <line num="422" type="stmt" count="0"/>
-      <line num="423" type="stmt" count="0"/>
-      <line num="424" type="stmt" count="0"/>
+      <line num="426" type="stmt" count="0"/>
       <line num="428" type="stmt" count="0"/>
       <line num="430" type="stmt" count="0"/>
+      <line num="431" type="stmt" count="0"/>
       <line num="432" type="stmt" count="0"/>
       <line num="433" type="stmt" count="0"/>
-      <line num="434" type="stmt" count="0"/>
-      <line num="435" type="stmt" count="0"/>
+      <line num="436" type="stmt" count="0"/>
+      <line num="437" type="stmt" count="0"/>
       <line num="438" type="stmt" count="0"/>
       <line num="439" type="stmt" count="0"/>
-      <line num="440" type="stmt" count="0"/>
-      <line num="441" type="stmt" count="0"/>
-      <line num="444" type="stmt" count="0"/>
-      <line num="454" type="method" name="deleteSession" visibility="public" complexity="3" crap="12" count="0"/>
+      <line num="442" type="stmt" count="0"/>
+      <line num="452" type="method" name="deleteSession" visibility="public" complexity="3" crap="12" count="0"/>
+      <line num="456" type="stmt" count="0"/>
+      <line num="457" type="stmt" count="0"/>
       <line num="458" type="stmt" count="0"/>
       <line num="459" type="stmt" count="0"/>
       <line num="460" type="stmt" count="0"/>
@@ -956,13 +956,11 @@
       <line num="466" type="stmt" count="0"/>
       <line num="467" type="stmt" count="0"/>
       <line num="468" type="stmt" count="0"/>
-      <line num="469" type="stmt" count="0"/>
       <line num="470" type="stmt" count="0"/>
+      <line num="471" type="stmt" count="0"/>
       <line num="472" type="stmt" count="0"/>
-      <line num="473" type="stmt" count="0"/>
-      <line num="474" type="stmt" count="0"/>
-      <line num="478" type="stmt" count="0"/>
-      <metrics loc="482" ncloc="395" classes="1" methods="10" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="232" coveredstatements="0" elements="242" coveredelements="0"/>
+      <line num="476" type="stmt" count="0"/>
+      <metrics loc="480" ncloc="392" classes="1" methods="10" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="230" coveredstatements="0" elements="240" coveredelements="0"/>
     </file>
     <file name="/home/axaite/dbwebb-kurser/mvc/me/report/src/Dice/Dice.php">
       <class name="App\Dice\Dice" namespace="global">
@@ -1102,6 +1100,6 @@
       <line num="52" type="stmt" count="0"/>
       <metrics loc="80" ncloc="44" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="16" coveredelements="0"/>
     </file>
-    <metrics files="22" loc="2497" ncloc="2048" classes="21" methods="116" coveredmethods="27" conditionals="0" coveredconditionals="0" statements="853" coveredstatements="92" elements="969" coveredelements="119"/>
+    <metrics files="22" loc="2495" ncloc="2045" classes="21" methods="116" coveredmethods="27" conditionals="0" coveredconditionals="0" statements="851" coveredstatements="92" elements="967" coveredelements="119"/>
   </project>
 </coverage>

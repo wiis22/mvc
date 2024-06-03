@@ -320,28 +320,25 @@ class ProjController extends AbstractController
         $playersHandsString = $session->get("playersHandsString");
         $playersHandsValues = $session->get("playersHandsValues");
 
-        if (!($session->get("bankHandString"))) {
-            list($bankHandString, $totBank) = $this->drawToDealer($deck);
-        }
+        $bankHandString = $session->get("bankHandString");
+        $totBank = $session->get("totBank");
 
-        if ($session->get("bankHandString")) {
-            $bankHandString = $session->get("bankHandString");
-            $totBank = $session->get("totBank");
+
+        if (!$bankHandString) {
+            list($bankHandString, $totBank) = $this->drawToDealer($deck);
         }
 
         $session->set("bankHandString", $bankHandString);
         $session->set("totBank", $totBank);
 
         //prep for check of hands.
-        if ($session->get("messages")) {
-            $messages = $session->get("messages");
-        }
 
+        $messages = $session->get("messages");
         $user = $session->get("username");
         $value = $session->get("$user");
 
         //chek result of hands
-        if (!($session->get("messages"))) {
+        if (!$messages) {
             list($messages, $value, $insatser) = $this->checkHands($playersHandsValues, $totBank, $insatser, $value);
             $session->set("messages", $messages);
             $session->set("$user", $value);
@@ -364,10 +361,11 @@ class ProjController extends AbstractController
         return $this->render('proj/bank.html.twig', $data);
     }
 
-    /**
-     * @param DeckOfCardsGraphic $deck
-     * @return array{array<string>, int}
-     */
+    // /**
+    //  * @param DeckOfCardsGraphic $deck
+    //  * @return array{array<string>, int}
+    //  */
+    // @phpstan-ignore-next-line
     private function drawToDealer(DeckOfCardsGraphic $deck): array
     {
         $bankHand = new Player();
