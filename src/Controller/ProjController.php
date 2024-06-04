@@ -16,12 +16,23 @@ use App\AGame21\Player;
 class ProjController extends AbstractController
 {
     /**
-     * Render the homepage for the game.
+     * Render the start of the game.
      *
      * @return Response
      */
-    #[Route("/proj", name: "info_proj")]
+    #[Route("/proj", name: "proj_spel")]
     public function home(): Response
+    {
+        return $this->render('proj/spel.html.twig');
+    }
+
+    /**
+     * Render the info / sbout page for the project.
+     *
+     * @return Response
+     */
+    #[Route("/proj/about", name: "proj_info")]
+    public function about(): Response
     {
         return $this->render('proj/home.html.twig');
     }

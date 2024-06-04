@@ -493,8 +493,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\ProjController\u003A\u003Ahome\u0028\u0029",
             "name": "home",
-            "summary": "Render\u0020the\u0020homepage\u0020for\u0020the\u0020game.",
+            "summary": "Render\u0020the\u0020start\u0020of\u0020the\u0020game.",
             "url": "classes/App-Controller-ProjController.html#method_home"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjController\u003A\u003Aabout\u0028\u0029",
+            "name": "about",
+            "summary": "Render\u0020the\u0020info\u0020\/\u0020sbout\u0020page\u0020for\u0020the\u0020project.",
+            "url": "classes/App-Controller-ProjController.html#method_about"
         },                {
             "fqsen": "\\App\\Controller\\ProjController\u003A\u003Ainit\u0028\u0029",
             "name": "init",

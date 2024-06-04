@@ -19,3 +19,6 @@ git clone https://github.com/wiis22/mvc.git
 cd mvc
 3. starta webbplatsen genom att köra detta kommandot:
 php -S localhost:8888 -t public
+
+##Innehåll
+Detta repo innehåller olika webbsidor som jag har gjort för kursen MVC. Där jag har använt symfony för att bygga upp de olika webbplatserna. Det finns några spel och lite annat smått och gått. Ta dig en titt.
