@@ -28,12 +28,12 @@
                     <strong>Denna hand är klar.</strong>
                 {% else %}
 
-                    <form action="/public/proj/draw" method="POST">
+                    <form action='{{ path('proj_draw') }}' method="POST">
                         <input type="hidden" name="user" value="{{ user }}">
                         <input type="hidden" name="hand" value="{{ i }}">
                         <button type="submit">Dra ett kort</button>
                     </form>
-                    <form action="/public/proj/stop" method="POST">
+                    <form action='{{ path('proj_stop') }}'method="POST">
                         <input type="hidden" name="user" value="{{ user }}">
                         <input type="hidden" name="hand" value="{{ i }}">
                         <button type="submit">Stanna</button>

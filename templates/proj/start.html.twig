@@ -11,7 +11,7 @@
     <div class="dealer">
         <h1>Dealer</h1>
     </div>
-    <form action="/public/proj/insats" method="POST" class="insatsen" id="insatsForm">
+    <form action='{{ path('proj_insats') }}' method="POST" class="insatsen" id="insatsForm">
         <div class="hands">
             {% for i in 1..Hands %}
                 <div class="hand">

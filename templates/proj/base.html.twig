@@ -5,12 +5,19 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="{{ asset('img/northenLigthsIcon.png') }}">
-        <link rel="stylesheet" href="../../../css/style.css" />
+        {# <link rel="stylesheet" href="../../../css/style.css" /> #}
 
+        {% if app.request.uri starts with 'http://127.0.0.1:8889/public/proj' %}
+            <link rel="stylesheet" href="../../../css/style.css" />
+        {% elseif app.request.uri starts with 'https://www.student.bth.se/~wiis22/dbwebb-kurser/mvc/me/report/public/proj' %}
+            <link rel="stylesheet" href="https://www.student.bth.se/~wiis22/dbwebb-kurser/mvc/me/report/css/style.css" />
+        {% endif %}
+
+        {#  
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
+        {% endblock %} #}
     </head>
     <body>
         <header class="site-header-proj">

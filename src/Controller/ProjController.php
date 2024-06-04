@@ -43,7 +43,7 @@ class ProjController extends AbstractController
      * @param SessionInterface $session The session interface to store data.
      * @return Response
      */
-    #[Route("/proj/init", methods: ["POST"])]
+    #[Route("/proj/init", name: "proj_init", methods: ["POST"])]
     public function init(SessionInterface $session, Request $request): Response
     {
         $user = $request->request->get('user');
@@ -116,7 +116,7 @@ class ProjController extends AbstractController
      *
      * @return Response
      */
-    #[Route("/proj/insats", methods: ["POST"])]
+    #[Route("/proj/insats", name: "proj_insats", methods: ["POST"])]
     public function insats(SessionInterface $session, Request $request): Response
     {
         $user = $request->request->get('user');
@@ -200,7 +200,7 @@ class ProjController extends AbstractController
      *
      * @return Response
      */
-    #[Route("/proj/draw", methods: ["POST"])]
+    #[Route("/proj/draw", name: "proj_draw", methods: ["POST"])]
     public function draw(SessionInterface $session, Request $request): Response
     {
         $user = $request->request->get('user');
@@ -269,7 +269,7 @@ class ProjController extends AbstractController
      *
      * @return Response
      */
-    #[Route("/proj/stop", methods: ["POST"])]
+    #[Route("/proj/stop", name: "proj_stop", methods: ["POST"])]
     public function stop(SessionInterface $session, Request $request): Response
     {
         $user = $request->request->get('user');
