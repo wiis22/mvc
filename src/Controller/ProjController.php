@@ -158,8 +158,8 @@ class ProjController extends AbstractController
         if ($session->get("playersHandsString")) {
             $playersHandsString = $session->get("playersHandsString");
             $playersHandsValues = $session->get("playersHandsValues");
-            // error_log(print_r($playersHandsValues, true));
         }
+
         if (!($session->get("playersHandsString"))) {
             for ($i = 0; $i < $nrHands; $i++) {
                 $playerHand = new Player();
@@ -176,7 +176,6 @@ class ProjController extends AbstractController
             $session->set("playersHandsString", $playersHandsString);
             $session->set("playersHandsValues", $playersHandsValues);
             $session->set("theDeck", $deck);
-            // error_log(print_r($playersHandsValues, true));
         }
 
 
